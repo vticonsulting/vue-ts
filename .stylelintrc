@@ -1,0 +1,6 @@
+{
+    "extends": ["stylelint-config-twbs-bootstrap/scss"],
+    "rules": {
+        "number-leading-zero": "always"
+    }
+}
