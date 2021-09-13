@@ -1,85 +1,114 @@
-import { defineConfig } from 'windicss/helpers';
-// import { colors as hancockColors } from './public/tokens'
+import { defineConfig } from 'windicss/helpers'
 
-// import colors from 'windicss/colors';
-import plugin from 'windicss/plugin';
-import { colors } from './public/tokens';
+import colors from 'windicss/colors'
+import plugin from 'windicss/plugin'
+import typography from 'windicss/plugin/typography'
+import filters from 'windicss/plugin/filters'
+import forms from 'windicss/plugin/forms'
+import aspectRatio from 'windicss/plugin/aspect-ratio'
+import lineClamp from 'windicss/plugin/line-clamp'
 
-const typography = require('windicss/plugin/typography')({
-  modifiers: ['DEFAULT', 'sm', 'lg', 'red'],
-});
-const filters = require('windicss/plugin/filters');
-const forms = require('windicss/plugin/forms');
-const aspectRatio = require('windicss/plugin/aspect-ratio');
-const lineClamp = require('windicss/plugin/line-clamp');
+import { colors as hancockColors } from './tokens'
 
 export default defineConfig({
-    preflight: false,
-    extract: {
-        include: [
-            '**/*.{vue,ts,jsx,ts,tsx,svelte,cshtml}',
-            'shared/**/*.{vue,ts}',
-        ],
-    },
-    safelist: ['prose', 'prose-sm', 'm-auto'],
-    darkMode: 'class',
-    plugins: [
-        typography,
-        filters,
-        forms,
-        aspectRatio,
-        lineClamp,
-        plugin(({ addUtilities }) => {
-            const newUtilities = {
-                '.skew-10deg': {
-                    transform: 'skewY(-10deg)',
-                },
-                '.skew-15deg': {
-                    transform: 'skewY(-15deg)',
-                },
-            }
-            addUtilities(newUtilities)
-        }),
-        plugin(({ addComponents }) => {
-            const buttons = {
-                '.btn': {
-                    padding: '.5rem 1rem',
-                    borderRadius: '.25rem',
-                    fontWeight: '600',
-                },
-
-                '.btn-blue': {
-                    'backgroundColor': '#3490dc',
-                    'color': '#fff',
-                    '&:hover': {
-                        backgroundColor: '#2779bd',
-                    },
-                },
-
-                '.btn-red': {
-                    'backgroundColor': '#e3342f',
-                    'color': '#fff',
-                    '&:hover': {
-                        backgroundColor: '#cc1f1a',
-                    },
-                },
-            }
-            addComponents(buttons)
-        }),
-        plugin(({ addDynamic, variants }) => {
-            addDynamic('skew', ({ Utility, Style }) => {
-                return Utility.handler
-                    .handleStatic(Style('skew'))
-                    .handleNumber(0, 360, 'int', number => `skewY(-${number}deg)`)
-                    .createProperty('transform')
-            }, variants('skew'))
-        }),
+  preflight: false,
+  extract: {
+    include: [
+      '**/*.{vue,ts,jsx,ts,tsx,svelte,cshtml}',
+      'shared/**/*.{vue,ts}',
     ],
-    theme: {
-        extend: {
-            colors: {
-                primary: colors['torea-bay'],
+  },
+  safelist: ['prose', 'prose-sm', 'm-auto'],
+  darkMode: 'class',
+
+  // https://windicss.org/posts/v30.html#attributify-mode
+  // attributify: true,
+
+  plugins: [
+    typography({
+      modifiers: ['DEFAULT', 'sm', 'lg', 'red'],
+    }),
+    filters,
+    forms,
+    aspectRatio,
+    lineClamp,
+    plugin(({ addUtilities }) => {
+      const newUtilities = {
+        '.skew-10deg': {
+          transform: 'skewY(-10deg)',
+        },
+        '.skew-15deg': {
+          transform: 'skewY(-15deg)',
+        },
+      }
+      addUtilities(newUtilities)
+    }),
+    plugin(({ addComponents }) => {
+      const buttons = {
+        '.btn': {
+          padding: '.5rem 1rem',
+          borderRadius: '.25rem',
+          fontWeight: '600',
+        },
+
+        '.btn-blue': {
+          'backgroundColor': '#3490dc',
+          'color': '#fff',
+          '&:hover': {
+            backgroundColor: '#2779bd',
+          },
+        },
+
+        '.btn-red': {
+          'backgroundColor': '#e3342f',
+          'color': '#fff',
+          '&:hover': {
+            backgroundColor: '#cc1f1a',
+          },
+        },
+      }
+      addComponents(buttons)
+    }),
+    plugin(({ addDynamic, variants }) => {
+      addDynamic('skew', ({ Utility, Style }) => {
+        return Utility.handler
+          .handleStatic(Style('skew'))
+          .handleNumber(0, 360, 'int', number => `skewY(-${number}deg)`)
+          .createProperty('transform')
+      }, variants('skew'))
+    }),
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: hancockColors['torea-bay'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: 'inherit',
+            a: {
+              'color': 'inherit',
+              'opacity': 0.75,
+              'fontWeight': '500',
+              'textDecoration': 'underline',
+              '&:hover': {
+                opacity: 1,
+                color: colors.teal[600],
+              },
             },
-        }
+            b: { color: 'inherit' },
+            strong: { color: 'inherit' },
+            em: { color: 'inherit' },
+            h1: { color: 'inherit' },
+            h2: { color: 'inherit' },
+            h3: { color: 'inherit' },
+            h4: { color: 'inherit' },
+            code: { color: 'inherit' },
+          },
+        },
+      },
     },
-});
+  },
+})

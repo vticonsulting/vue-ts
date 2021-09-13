@@ -3,9 +3,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Vue } from 'vue-property-decorator'
 
-@Component
 export default class InputFocus extends Vue {
   $refs!: {
     input: HTMLInputElement

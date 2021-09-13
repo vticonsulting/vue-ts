@@ -1,32 +1,32 @@
-import { createApp } from 'vue'
+// register vue composition api globally
+import { ViteSSG } from 'vite-ssg'
+import generatedRoutes from 'virtual:generated-pages'
+import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
-import Oruga from '@oruga-ui/oruga-next'
-import SmartTable from 'vuejs-smart-table'
-import VueSidebarMenu from 'vue-sidebar-menu'
 
+// windicss layers
+import 'virtual:windi-base.css'
+import 'virtual:windi-components.css'
+
+// your custom styles here
 // import '~/assets/css/custom.scss'
-// import '~/assets/css/oruga-bootstrap.css'
-// import '@oruga-ui/oruga-next/dist/oruga.css'
-// import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
-
+// import './styles/main.css'
 import '~/assets/css/hancock.scss'
-import '~/assets/css/sidebar-menu.scss'
 
-import 'virtual:windi.css'
+// windicss utilities should be the last style import
+import 'virtual:windi-utilities.css'
 
-import BaseAvatar from '~/components/BaseAvatar.vue'
-import BaseLogo from '~/components/BaseLogo.vue'
-import BaseIconSolid from '~/components/BaseIconSolid.vue'
-import BaseIconOutlined from '~/components/BaseIconOutlined.vue'
-// import BaseInput from '~/components/BaseInput.vue'
+// windicss devtools support (dev only)
+import 'virtual:windi-devtools'
 
-const app = createApp(App)
-app.component('base-avatar', BaseAvatar)
-app.component('base-logo', BaseLogo)
-app.component('base-icon-solid', BaseIconSolid)
-app.component('base-icon-outlined', BaseIconOutlined)
-// app.component('base-input', BaseInput)
-app.use(Oruga)
-app.use(SmartTable)
-app.use(VueSidebarMenu)
-app.mount('#app')
+const routes = setupLayouts(generatedRoutes)
+
+// https://github.com/antfu/vite-ssg
+export const createApp = ViteSSG(
+  App,
+  { routes },
+  (ctx) => {
+    // install all modules under `modules/`
+    Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+  },
+)

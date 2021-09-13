@@ -2,7 +2,6 @@
 import users from '~/users.json'
 
 export default {
-  name: 'TheBasics',
   data() {
     return {
       users,
@@ -11,8 +10,8 @@ export default {
       selectedRows: [],
       filters: {
         name: { value: '', keys: ['name'] },
-        age: { value: { min: 0, max: 100 }, custom: this.ageFilter }
-      }
+        age: { value: { min: 0, max: 100 }, custom: this.ageFilter },
+      },
     }
   },
   methods: {
@@ -20,20 +19,19 @@ export default {
       return row.age >= filterValue.min && row.age <= filterValue.max
     },
     nameLength(row) {
-      return row.name.length; // TODO - submit a PR to remove unnecessary template literal
+      return row.name.length // TODO - submit a PR to remove unnecessary template literal
     },
     dateSort(a, b) {
-      const date1 = new Date(a.registered).getTime();
-      const date2 = new Date(b.registered).getTime();
+      const date1 = new Date(a.registered).getTime()
+      const date2 = new Date(b.registered).getTime()
 
-      return date1 - date2;
-    }
-  }
+      return date1 - date2
+    },
+  },
 }
 </script>
 
-
-<template >
+<template>
   <div class="card">
     <div class="card-body">
       <nav aria-label="breadcrumb">
@@ -81,19 +79,19 @@ export default {
           @selectionChanged="selectedRows = $event"
         >
           <caption>List of users</caption>
-          <thead slot="head">
+          <template #head>
             <v-th
-              style="white-space: nowrap"
+              style="white-space: nowrap;"
               :custom-sort="dateSort"
               default-sort="desc"
               scope="col"
             >Registered</v-th>
-            <v-th style="white-space: nowrap" :sort-key="nameLength" scope="col">Name</v-th>
-            <v-th style="white-space: nowrap" sort-key="age" scope="col">Age</v-th>
-            <v-th style="white-space: nowrap" sort-key="address.state" scope="col">State</v-th>
-          </thead>
-          <tbody slot="body" slot-scope="{displayData}">
-            <v-tr v-for="row in displayData" :key="row.guid" :row="row">
+            <v-th style="white-space: nowrap;" :sort-key="nameLength" scope="col">Name</v-th>
+            <v-th style="white-space: nowrap;" sort-key="age" scope="col">Age</v-th>
+            <v-th style="white-space: nowrap;" sort-key="address.state" scope="col">State</v-th>
+          </template>
+          <template #body="{ rows }">
+            <v-tr v-for="row in rows" :key="row.id" :row="row">
               <td>{{ row.registered }}</td>
               <td>
                 <img class="rounded-circle" :src="row.picture" />
@@ -104,7 +102,7 @@ export default {
                 <a href="#">{{ row.address.state }}</a>
               </td>
             </v-tr>
-          </tbody>
+          </template>
         </v-table>
       </div>
 

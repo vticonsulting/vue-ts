@@ -71,8 +71,8 @@ const selectedRows: Record<string, any>[] = ref([])
       </div>
       <label>Filter by Name</label>
       <input v-model="filters.name.value" class="form-control" />
-      <base-input></base-input>
-      <base-button>My Button</base-button>
+      <!-- <base-input></base-input> -->
+      <!-- <base-button>My Button</base-button> -->
       <div class="mt-3 alert alert-success" role="alert">
         <h4 class="alert-heading">Well done!</h4>
         <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>

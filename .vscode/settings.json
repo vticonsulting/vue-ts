@@ -1,15 +1,38 @@
 {
-    "prettier.enable": false,
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "volar.tsPlugin": true,
-    "volar.tsPluginStatus": false,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "files.associations": {
-        "*.css": "postcss",
-    },
-    "cSpell.words": [
-        "vite"
-    ]
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "volar.tsPlugin": true,
+  "volar.tsPluginStatus": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss",
+  },
+  "cSpell.words": [
+    "antfu",
+    "demi",
+    "headlessui",
+    "heroicons",
+    "iconify",
+    "intlify",
+    "msapplication",
+    "nprogress",
+    "oruga",
+    "pinia",
+    "pnpm",
+    "popperjs",
+    "prismjs",
+    "stylelint",
+    "twbs",
+    "unplugin",
+    "vite",
+    "vitejs",
+    "vuejs",
+    "vueuse",
+    "windicss"
+  ]
 }
