@@ -1,8 +1,8 @@
-<template>
-  <example-table></example-table>
-</template>
-
 <route lang="yaml">
 meta:
-  layout: develop
+  layout: sidebar
 </route>
+
+<template>
+  <user-table></user-table>
+</template>

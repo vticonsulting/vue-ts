@@ -62,6 +62,14 @@ export default {
         <h4 class="alert-heading">Well done!</h4>
         <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
         <hr />
+
+        <strong>Selected:</strong>
+
+        <div v-if="selectedRows.length === 0" class="text-muted">No Rows Selected</div>
+        <ul>
+          <li v-for="selected in selectedRows" :key="selected">{{ selected.name }}</li>
+        </ul>
+
         <p
           class="mb-0"
         >Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
@@ -105,12 +113,6 @@ export default {
           </template>
         </v-table>
       </div>
-
-      <strong>Selected:</strong>
-      <div v-if="selectedRows.length === 0" class="text-muted">No Rows Selected</div>
-      <ul>
-        <li v-for="selected in selectedRows" :key="selected">{{ selected.name }}</li>
-      </ul>
     </div>
   </div>
 </template>

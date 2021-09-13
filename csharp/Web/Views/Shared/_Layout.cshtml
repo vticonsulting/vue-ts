@@ -1,0 +1,50 @@
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplar</title>
+
+  <script type="text/javascript">
+    var Exemplar = Exemplar || {};
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet" href="~/styles/main.css" />
+
+  @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+
+<body>
+
+  @*<div id="root">
+    <page-component></page-component>
+    </div>*@
+
+  <div id="root" class="vueComponentContainer">
+    <page-component></page-component>
+  </div>
+  @RenderBody()
+  <script src="~/scripts/vendors.js"></script>
+  <script src="~/scripts/main.js"></script>
+
+  <script>
+    if (Exemplar) {
+      Exemplar.pageComponentCreated = function () {
+        console.log("pageComponent " + pageComponent);
+        Exemplar.pageComponent.load();
+      };
+      Exemplar.load();
+    } else {
+      console.log("[Bootstrapper] Unable to find Exemplar application component.");
+    }
+  </script>
+
+  @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

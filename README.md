@@ -1,3 +1,53 @@
+# README
+
+ASP.NET Core, .NET Core, Entity Framework, Code-first migrations, Web API
+Backend, Vue.JS Client-Side Model Binding,
+
+
+## Components
+
+- PropertyInspectionFormAdmin
+
+Exemplar.Api - RESTFul API
+  Controllers 1 per table, Attribute-based routing, Authorize, Inherits
+    from Base Controller Each injects Automapper, a corresponding repo,
+    named after the table as well
+  Repositories 1 per table
+  Automapper does heavy lifting for creating DTOs when querying Domain Objects
+  Mapping profiles (Data Transfer Object / Domain)
+    A mapping profile for every table
+
+```csharp
+namespace Exemplar.Api.MappingProfiles
+{
+    using AutoMapper;
+    using Exemplar.Domain;
+    using Exemplar.Dto.RolePermission;
+
+    public class RolePermissionProfile : Profile
+    {
+        public RolePermissionProfile()
+        {
+            CreateMap<RolePermission, RolePermissionDto>()
+                .ForMember(dest => dest.PermissionId, opt => opt.MapFrom(src => src.PermissionId))
+                .ForMember(dest => dest.RoleId, opt => opt.MapFrom(src => src.RoleId))
+                .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role))
+                .ForMember(dest => dest.Permission, opt => opt.MapFrom(src => src.Permission))
+                .ForAllOtherMembers(vm => vm.Ignore());
+        }
+    }
+}
+```
+
+Exemplar.Data
+  Migrations
+Exemplar.Domain - Domain Objects (Entities)
+Exemplar.Dto (Domain)
+Exemplar.Services - Data access, Cloud storage, Exemplar message
+Exemplar.Utilities - Email sender, Date/Time, Redis cache
+Exemplar.Web (Api, Dto, Services) -
+
+
 # Vue TS
 
 - My Dashboard
@@ -56,3 +106,35 @@ This template should help get you started developing with Vue 3 and Typescript i
 ## Type Support For `.vue` Imports in TS
 
 Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+
+## Database
+
+```txt
+# Dev
+Server=(localdb)\\MSSQLLocalDB;
+Database=ExemplarCore;
+Trusted_Connection=True;
+MultipleActiveResultSets=true;
+
+# QA
+Server=tcp:han-sql-dev.database.windows.net,1433;
+Initial Catalog=ExemplarCore;
+Persist Security Info=False;
+User ID=iasa;
+Password=Innovative123!;
+MultipleActiveResultSets=True;
+Encrypt=True;
+TrustServerCertificate=False;
+Connection Timeout=30;
+
+# Prod
+Server=tcp:han-sql-prod-east.database.windows.net,1433;
+Initial Catalog=ExemplarCore;
+Persist Security Info=False;
+User ID=hccsqladmin;
+Password=Htu849rif%#ja^#a;
+MultipleActiveResultSets=True;
+Encrypt=True;
+TrustServerCertificate=False;
+Connection Timeout=30;
+```
