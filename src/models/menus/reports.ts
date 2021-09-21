@@ -8,6 +8,7 @@ export const userInfo = {
 const reportListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ReportList),
   title: 'Report List',
+  href: '/reports',
   icon: 'fas fa-list',
 })
 
@@ -19,7 +20,7 @@ const addReportMenu = useMenuItem({
 
 const userReportListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.UserReportList),
-  title: 'Report List',
+  title: 'User Report List',
   icon: 'fas fa-list',
 })
 
