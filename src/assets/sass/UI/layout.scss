@@ -1,0 +1,65 @@
+@import './variables';
+@import './components/avatar';
+@import './components/sidebar-menu';
+
+.appLayout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: $app-sidebar-width;
+}
+
+.appLayout.collapsed {
+    padding-left: $app-sidebar-width-collapsed;
+}
+
+.appHeader {
+    height: $app-header-height;
+    border-bottom: 1px solid $color-gray-50;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    & .title {
+        font-size: $font-size-lg;
+        margin-bottom: 0;
+        line-height: 1;
+    }
+}
+
+.appHeaderMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.appMain {
+    flex: 1 1 0%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.appFooter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.appButton {
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    text-transform: none;
+    cursor: pointer;
+    line-height: inherit;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-color: transparent;
+    padding: 0.5rem;
+
+}
