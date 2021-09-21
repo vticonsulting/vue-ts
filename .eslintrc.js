@@ -11,5 +11,6 @@ module.exports = {
     'vue/singleline-html-element-content-newline': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
 }

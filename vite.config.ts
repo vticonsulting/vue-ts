@@ -107,8 +107,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Vue TS',
+        short_name: 'Vue 3 TypeScript',
         theme_color: '#ffffff',
         icons: [
           {
@@ -141,7 +141,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-inspect
     Inspect({
       // change this to enable inspect for debugging
-      enabled: false,
+      enabled: true,
     }),
   ],
 

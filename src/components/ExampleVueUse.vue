@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useMouse, useCounter } from '@vueuse/core';
-const { x, y } = useMouse();
-const { count, inc, dec } = useCounter(0);
+import { useMouse, useCounter } from '@vueuse/core'
+
+const { x, y } = useMouse()
+const { count, inc, dec } = useCounter(0)
 </script>
 
 <template>

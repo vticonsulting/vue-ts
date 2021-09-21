@@ -4,5 +4,7 @@ meta:
 </route>
 
 <template>
+  <BaseIconOutlined name="collection" />
+
   <user-table></user-table>
 </template>

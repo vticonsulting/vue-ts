@@ -200,7 +200,7 @@
     </g>
 
     <path
-      v-if="name === 'collection'"
+      v-if="['collection', 'project'].includes(name)"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
