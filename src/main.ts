@@ -9,6 +9,8 @@ import 'virtual:windi-base.css'
 import 'virtual:windi-components.css'
 
 // your custom styles here
+import '~/styles/index.scss'
+// import '~/assets/sass/UI/layout.scss'
 // import '~/assets/css/custom.scss'
 // import './styles/main.css'
 import '~/assets/css/hancock.scss'

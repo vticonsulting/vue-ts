@@ -148,5 +148,5 @@ export default {
 </template>
 
 <style lang="scss">
-@import "./scss/vue-sidebar-menu";
+// @import "./scss/vue-sidebar-menu";
 </style>

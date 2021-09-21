@@ -1,11 +1,14 @@
 <template>
-  <div :class="['min-h-screen flex flex-col', collapsed ? 'ml-12' : 'ml-66']">
-    <header-component></header-component>
-    <main class="flex-1">
+  <div :class="['app-layout', collapsed ? 'collapsed' : '']">
+    <HeaderComponent />
+
+    <MenuComponent @toggle-collapse="onToggleCollapse" />
+
+    <main class="app-main">
       <router-view />
     </main>
-    <menu-component @toggle-collapse="onToggleCollapse"></menu-component>
-    <footer-component></footer-component>
+
+    <FooterComponent />
   </div>
 </template>
 

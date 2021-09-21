@@ -19,17 +19,22 @@ export default defineComponent({
 })
 </script>
 <template>
-  <header
-    class="px-4 pageHeader d-flex justify-content-between align-items-center"
-    style="height: 4rem;"
-  >
-    <div class="w-full">
-      <input ref="searchInput" type="search" class="form-control" />
-    </div>
-
-    <div>
-      <!-- <button type="button" class="btn btn-light">Learn more</button> -->
-      <!-- <button type="button" class="btn btn-dark">Donate</button> -->
-    </div>
+  <header class="app-header">
+    <nav class="app-header-menu">
+      <h1 class="title">
+        <slot></slot>
+      </h1>
+      <div class="actions">
+        <button class="app-button">
+          <base-icon-solid name="question-mark-circle"></base-icon-solid>
+        </button>
+        <button class="app-button">
+          <base-icon-solid name="cog"></base-icon-solid>
+        </button>
+        <button class="app-button">
+          <base-icon-solid name="bell"></base-icon-solid>
+        </button>
+      </div>
+    </nav>
   </header>
 </template>

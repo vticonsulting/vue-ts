@@ -77,13 +77,13 @@ export default defineComponent({
     @item-click="onItemClick"
   >
     <template #header>
-      <a href="#" class="bg-white flex py-2 text-primary-500 items-center">
+      <a href="#" class="sidebar-header bg-white flex py-2 text-primary-500 items-center">
         <base-logo name="hancock-h"></base-logo>
 
         <span v-if="!collapsed" class="font-bold" style="white-space: nowrap;">Claims Consultants</span>
       </a>
 
-      <div class="mt-3 p-2">
+      <div class="sidebar-profile-container mt-3 p-2">
         <a href="#" class="flex text-white items-center hover:text-white">
           <base-avatar class="rounded-full h-8 w-8"></base-avatar>
 
@@ -93,6 +93,20 @@ export default defineComponent({
           </div>
         </a>
       </div>
+    </template>
+
+    <template #toggle-icon>
+      <span class="sidebar-toggle-icon">
+        <base-icon-outlined :name="collapsed ? 'chevron-right' : 'chevron-left'"></base-icon-outlined>
+
+        <span v-if="!collapsed">
+          Toggle Toolbar
+        </span>
+      </span>
+    </template>
+
+    <template #dropdown-icon>
+      <base-icon-outlined name="chevron-right"></base-icon-outlined>
     </template>
   </sidebar-menu>
 </template>
