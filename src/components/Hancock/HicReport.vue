@@ -1,3 +1,30 @@
+<script lang="ts">
+import { reactive, defineComponent, toRefs } from 'vue';
+
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      inspectionTypeInitial: '',
+      inspectionTypeSubsequent: '',
+      insuredName: 'Victor Tolbert',
+      claimNumber: '5456443XD',
+      lossDate: '',
+      inspectionDate: '',
+      lossLocation: '',
+      city: '',
+      state: '',
+      postalCode: '',
+      emailAddress: '',
+    })
+
+    return {
+      ...toRefs(state)
+    }
+  }
+})
+
+</script>
+
 <template>
   <form class="form">
     <table class="border h-table">
@@ -14,59 +41,65 @@
               id="inspection-type-initial"
               type="radio"
               name="inspectionType"
+              v-model="inspectionTypeInitial"
             />
             <label for="inspection-type-initial">Initial</label>
 
-            <input id="inspection-type-subsequent" type="radio" name="inspectionType" />
+            <input
+              id="inspection-type-subsequent"
+              type="radio"
+              name="inspectionType"
+              v-model="inspectionTypeSubsequent"
+            />
             <label for="inspection-type-subsequent">Subsequent</label>
           </td>
         </tr>
         <tr>
           <td>
             <label for="insured-name">Insured Name:</label>
-            <input id="insured-name" type="text" name="insuredName" value="Victor Tolbert" />
+            <input id="insured-name" type="text" name="insuredName" v-model="insuredName" />
           </td>
           <td>
             <label for="claim-number">Claim #:</label>
-            <input id="claim-number" type="text" name="claimNumber" value="5456443XD" />
+            <input id="claim-number" type="text" name="claimNumber" v-model="claimNumber" />
           </td>
           <td>
             <label for="loss-date">Date of Loss:</label>
-            <input id="loss-date" type="text" name="lossDate" value="January 5, 2021" />
+            <input id="loss-date" type="text" name="lossDate" v-model="lossDate" />
           </td>
           <td>
             <label for="inspection-date">Date of Inspection:</label>
-            <input id="inspection-date" type="text" name="inspectionDate" value="March 6, 2021" />
+            <input id="inspection-date" type="text" name="inspectionDate" v-model="inspectionDate" />
           </td>
         </tr>
         <tr>
           <td>
             <label for="loss-location">Loss Location:</label>
-            <input id="loss-location" type="text" name="lossLocation" value="1234 ABC Street" />
+            <input id="loss-location" type="text" name="lossLocation" v-model="lossLocation" />
           </td>
           <td>
             <label for="city">City:</label>
-            <input id="city" type="text" name="city" value="Atlanta" />
+            <input id="city" type="text" name="city" v-model="city" />
           </td>
           <td>
             <label for="state">State:</label>
-            <input id="state" type="text" name="state" value="GA" />
+            <input id="state" type="text" name="state" v-model="state" />
           </td>
           <td>
             <label for="postal-code">ZIP Code:</label>
-            <input id="postal-code" type="text" name="postalCode" value="30316" />
+            <input id="postal-code" type="text" name="postalCode" v-model="postalCode" />
           </td>
         </tr>
         <tr>
           <td colspan="2">
             <label for>Email Address:</label>
-            <input id type="text" name />
+            <input id type="text" name="emailAddress" v-model="emailAddress" />
           </td>
           <td class="text-center" colspan="2">
             <label style="display: block;">Insured on premises for inspection:</label>
-            <input id type="radio" name />
+            <input id type="radio" name="insuredOnPremises" value="yes" />
             Yes
-            <input id type="radio" name />
+            <input id type="radio" name="insuredOnPremises" value="no" />
             No
           </td>
         </tr>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 prose">
+  <div class="mt-4 prose max-w-none">
     <h2>Reports</h2>
 
     <table class="table bordered">
