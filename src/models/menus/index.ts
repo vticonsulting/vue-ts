@@ -6,12 +6,14 @@ import { projectsMenu } from './projects'
 import { reportsMenu } from './reports'
 import { settingsMenu } from './settings'
 import { usersMenu } from './users'
+import { designMenu } from './design'
 
 export {
   billingMenu,
   calendarMenu,
   customersMenu,
   dashboardMenu,
+  designMenu,
   projectsMenu,
   reportsMenu,
   settingsMenu,

@@ -7,32 +7,32 @@ export const userInfo = {
 
 const userListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ViewUsersMenu),
-  title: 'User List',
-  icon: 'fas fa-list',
+  title: 'Users List',
+  href: '/users',
 })
 
 const bulkAssignMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.BulkAssign),
   title: 'Bulk Assign',
-  icon: '',
+  href: '/users/bulk-assign',
 })
 
 const addApplicationUserMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddApplicationUser),
   title: 'Add Application User',
-  icon: 'fas fa-user-plus',
+  href: '/users/add-application-user',
 })
 
 const addServiceTechMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddServiceTech),
   title: 'Add Service Tech',
-  icon: 'fas fa-plus',
+  href: '/users/add-service-tech',
 })
 
 const addInsuranceAdjusterMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddInsuranceAdjuster),
   title: 'Add Insurance Adjuster',
-  icon: 'fas fa-plus',
+  href: '/users/add-insurance-adjuster',
 })
 
 export const usersMenu = useMenuItem({

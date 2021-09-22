@@ -8,13 +8,13 @@ export const userInfo = {
 export const addProjectMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddProject),
   title: 'Add Project',
-  icon: 'fas fa-plus',
+  href: '/projects/add',
 })
 
 export const listProjectMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ViewProjectsList),
-  title: 'Project List',
-  icon: 'fas fa-list',
+  title: 'Projects List',
+  href: '/projects',
 })
 
 export const projectsMenu = useMenuItem({

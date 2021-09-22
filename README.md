@@ -1,8 +1,18 @@
-# README
+#  (An Opinionated Proof of Concept)
+## Features
 
-ASP.NET Core, .NET Core, Entity Framework, Code-first migrations, Web API
-Backend, Vue.JS Client-Side Model Binding
-
+- ASP.NET Core, .NET Core,
+- Entity Framework,
+- Code-first migrations,
+- Web API Backend,
+- Client-Side Model Binding
+  - Vue 3, React 17, Svelte examples
+  - Bootstrap, Tailwind, Bulma, and Custom CSS Examples
+  - Vue Composition API
+  - Kendo UI Friendly
+  - Light-weight UI Components
+  - Conventions over Configuration
+  - TypeScript
 
 ## Components
 
@@ -53,6 +63,52 @@ namespace Exemplar.Api.MappingProfiles
 
 # Dynamic Menu
 
+| Menu Item              | Required Permission               | Controller | Action |
+| ---------------------- | --------------------------------- | ---------- | ------ |
+| *My Dashboard*         |                                   |            |        |
+| *Super Dashboard*      | `ViewSuperDashboard`              |            |        |
+| *Projects*             |                                   |            |        |
+| Projects List          | `ViewProjectsList`                |            |        |
+| Project Assignment     | `ProjectAssignment`               |            |        |
+| Add Project            | `AddProject`                      |            |        |
+| Archived Projects      | `ViewArchivedProjects`            |            |        |
+| Closed Projects        | `ViewClosedProjects`              |            |        |
+| Upload Projects        | `UploadProject`                   |            |        |
+| Pending Claims         | `PendingClaimsList`               |            |        |
+| External Claims        | `ExternalClaimsList`              |            |        |
+| EagleView Projects     | `ViewEVProjects`                  |            |        |
+| Geomni Projects        | `ViewEVProjects`                  |            |        |
+| Auto Scheduler         | `ViewSvtAvailability`             |            |        |
+| *Calendar*             | `Calendar`                        |            |        |
+| Helpdesk FAQs          | `ViewFAQList` NOT `ManageFAQList` |            |        |
+| *Customers*            |                                   |            |        |
+| Customer List          | `ViewCustomersMenu`               |            |        |
+| Add Customer           | `AddCustomer`                     |            |        |
+| Add Business Unit      | `AddBusinessUnit`                 |            |        |
+| Billing                | `ViewBillingMenu`                 |            |        |
+| *Users*                |                                   |            |        |
+| User List              | `ViewUsersMenu`                   |            |        |
+| Bulk Assign            | `BulkAssign`                      |            |        |
+| Add Application User   | `AddApplicationUser`              |            |        |
+| Add Service Tech       | `AddServiceTech`                  |            |        |
+| Add Insurance Adjuster | `AddInsuranceAdjuster`            |            |        |
+| *Reports*              |                                   |            |        |
+| Report List            | `ReportList`                      |            |        |
+| Add Report             | `AddEditReports`                  |            |        |
+| User Report List       | `UserReportList`                  |            |        |
+| *Settings*             |                                   |            |        |
+| Service Type List      | `ViewServiceTypes`                |            |        |
+| Add Service Type       | `AddServiceType`                  |            |        |
+| Announcement List      |                                   |            |        |
+| Add Announcement       | `AddAnnouncement`                 |            |        |
+| FAQ List               | `ManageFAQList`                   |            |        |
+| Territory List         | `ViewRegionsMenu`                 |            |        |
+| Add Service Area       | `AddServiceArea`                  |            |        |
+| Edit Role Permissions  | `EditPermissions`                 |            |        |
+| IA Firm List           | `ViewAddEditIAFirm`               |            |        |
+| Release Information    |                                   |            |        |
+| Tokens Administrator   |                                   |            |        |
+
 - My Dashboard
 - Super Dashboard `ViewSuperDashboard`
 - Projects `ViewProjectsList`, `AddProject`, `ProjectAssignment`, `ViewClosedProjects`, `ExternalClaimsList`
@@ -67,7 +123,7 @@ namespace Exemplar.Api.MappingProfiles
   - EagleView Projects `ViewEVProjects`
   - Geomni Projects `ViewEVProjects`
 - Auto Scheduler `ViewSvtAvailability`
-- Calendar Calendar
+- Calendar `Calendar`
 - Helpdesk FAQs `ViewFAQList` NOT `ManageFAQList`
 - Customers `ViewCustomersMenu`, `AddCustomer`, `AddBusinessUnit`
   - Customer List `ViewCustomersMenu`
@@ -80,7 +136,7 @@ namespace Exemplar.Api.MappingProfiles
   - Add Application User `AddApplicationUser`
   - Add Service Tech `AddServiceTech`
   - Add Insurance Adjuster `AddInsuranceAdjuster`
-- Reports ReportList, `AddEditReports`, `UserReportList`
+- Reports `ReportList`, `AddEditReports`, `UserReportList`
   - Report List `ReportList`
   - Add Report `AddEditReports`
   - Report List `UserReportList`

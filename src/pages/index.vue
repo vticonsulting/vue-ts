@@ -1,8 +1,3 @@
-<route lang="yaml">
-meta:
-  layout: sidebar
-</route>
-
 <template>
-  <UserTable />
+  <div></div>
 </template>

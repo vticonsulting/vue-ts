@@ -8,5 +8,6 @@ export const userInfo = {
 export const calendarMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.Calendar),
   title: 'Calendar',
+  href: '/calendar',
   icon: 'fas fa-calendar',
 })

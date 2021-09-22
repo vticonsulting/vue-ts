@@ -1,4 +1,4 @@
-import path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -16,12 +16,12 @@ import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+const markdownWrapperClasses = 'prose prose-sm mr-auto text-left'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [
@@ -135,7 +135,7 @@ export default defineConfig({
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
+      include: [resolve(__dirname, 'locales/**')],
     }),
 
     // https://github.com/antfu/vite-plugin-inspect
@@ -167,4 +167,20 @@ export default defineConfig({
       'vue-demi',
     ],
   },
+
+  // build: {
+  //   sourcemap: true,
+  //   outDir: "./wwwroot",
+  //   rollupOptions: {
+  //     input: {
+  //       main: resolve(__dirname, "index.html"),
+  //       // examples: resolve(__dirname, "examples/index.html"),
+  //     },
+  //     output: {
+  //       entryFileNames: "[name].js",
+  //       chunkFileNames: "[name].js",
+  //       assetFileNames: "[name].[ext]",
+  //     },
+  //   },
+  // },
 })

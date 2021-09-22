@@ -7,21 +7,25 @@ export const userInfo = {
 
 const reportListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ReportList),
-  title: 'Report List',
-  href: '/reports',
-  icon: 'fas fa-list',
+  title: 'Reports List',
+  href: {
+    path: '/reports',
+  },
+  external: true,
 })
 
 const addReportMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddEditReports),
   title: 'Add Report',
-  icon: 'fas fa-plus',
+  href: '/reports/add',
 })
 
 const userReportListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.UserReportList),
-  title: 'User Report List',
-  icon: 'fas fa-list',
+  title: 'User Reports List',
+  href: {
+    path: '/reports/user',
+  },
 })
 
 export const reportsMenu = useMenuItem({

@@ -7,20 +7,20 @@ export const userInfo = {
 
 export const customerListMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ViewCustomersMenu),
-  title: 'Customer List',
-  icon: 'fas fa-list',
+  title: 'Customers List',
+  href: '/customers',
 })
 
 export const addCustomerMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddCustomer),
   title: 'Add Customer',
-  icon: 'fas fa-user-add',
+  href: '/customers/add',
 })
 
 export const addBusinessUnitMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.AddBusinessUnit),
   title: 'Add Business Unit',
-  icon: 'fas fa-calendar',
+  href: '/customers/add-business-unit',
 })
 
 export const customersMenu = useMenuItem({

@@ -5,4 +5,6 @@ export const dashboardMenu = useMenuItem({
   hidden: false,
   title: 'Dashboard',
   icon: 'fas fa-tachometer-alt',
+  exact: true,
+  external: true,
 })

@@ -1,5 +1,6 @@
 export const colors = {
   'san-juan': {
+    DEFAULT: '#314B6F',
     50: '#f5f6f8',
     100: '#eaedf1',
     200: '#ccd2db',
@@ -12,6 +13,7 @@ export const colors = {
     900: '#182536',
   },
   'tango': {
+    DEFAULT: '#ee7d1e',
     50: '#fef9f4',
     100: '#fdf2e9',
     200: '#fbdfc7',
@@ -24,6 +26,7 @@ export const colors = {
     900: '#753d0f',
   },
   'torea-bay': {
+    DEFAULT: '#002894',
     50: '#f2f4fa',
     100: '#e6eaf4',
     200: '#bfc9e4',

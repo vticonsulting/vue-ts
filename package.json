@@ -2,11 +2,12 @@
   "name": "vue-ts",
   "private": true,
   "scripts": {
-    "dev": "vite --host --port 3333 --open",
+    "dev": "vite --host --port 3333",
     "build": "cross-env NODE_ENV=production vite-ssg build",
     "preview": "vite preview",
     "preview-https": "serve dist",
-    "lint:css": "stylelint src/assets/css"
+    "lint:css": "stylelint src/assets/css",
+    "analysis": "windicss-analysis"
   },
   "dependencies": {
     "@casl/ability": "^5.4.3",
@@ -67,6 +68,7 @@
     "vite-plugin-vue-layouts": "^0.4.1",
     "vite-plugin-windicss": "^1.4.3",
     "vite-ssg": "^0.15.1",
-    "vue-tsc": "^0.3.0"
+    "vue-tsc": "^0.3.0",
+    "windicss-analysis": "^0.3.4"
   }
 }

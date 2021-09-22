@@ -81,7 +81,9 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        primary: hancockColors['torea-bay'],
+        primary: colors.gray,
+        secondary: colors.gray,
+        brand: colors.gray,
       },
       typography: {
         DEFAULT: {

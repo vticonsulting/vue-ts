@@ -18,10 +18,10 @@ export default class App extends Vue {
   @Prop({ default: 'world' }) readonly propMessage!: string
 
   // inital data
-  msg: number = 123
+  msg = 123
 
   // use prop values for initial data
-  helloMsg: string = 'Hello, ' + this.propMessage
+  helloMsg = `Hello, ${this.propMessage}`
 
   // lifecycle hook
   mounted() {
@@ -30,12 +30,12 @@ export default class App extends Vue {
 
   // computed
   get computedMsg() {
-    return 'computed ' + this.msg
+    return `computed ${this.msg}`
   }
 
   // method
   greet() {
-    alert('greeting: ' + this.msg)
+    alert(`greeting: ${this.msg}`)
   }
 }
 </script>

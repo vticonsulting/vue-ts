@@ -4,9 +4,10 @@
   "i18n-ally.sortKeys": true,
   "prettier.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "volar.tsPlugin": true,
+  // "volar.tsPlugin": true,
   "volar.tsPluginStatus": false,
   "vite.autoStart": false,
+  "volar.takeOverBuiltinTsExtensions": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },

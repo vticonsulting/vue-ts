@@ -1,7 +1,9 @@
 export type MenuItem = {
   title: string
-  href?: string | undefined
+  href?: string | object
   icon?: string
   hidden?: boolean
   child?: MenuItem[]
+  exact?: boolean
+  external?: boolean
 }

@@ -9,4 +9,5 @@ export const billingMenu = useMenuItem({
   hidden: !userInfo.permissions.includes(Permissions.ViewBillingMenu),
   title: 'Billing',
   icon: 'fas fa-money-bill-alt',
+  href: '/billing',
 })
