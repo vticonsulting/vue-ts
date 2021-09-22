@@ -1,31 +1,114 @@
-<script lang="ts">
-import { reactive, defineComponent, toRefs } from 'vue'
+<!DOCTYPE html>
+<html lang="en">
 
-export default defineComponent({
-  setup() {
-    const state = reactive({
-      inspectionTypeInitial: '',
-      inspectionTypeSubsequent: '',
-      insuredName: 'Victor Tolbert',
-      claimNumber: '5456443XD',
-      lossDate: '',
-      inspectionDate: '',
-      lossLocation: '',
-      city: '',
-      state: '',
-      postalCode: '',
-      emailAddress: '',
-    })
-
-    return {
-      ...toRefs(state),
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      box-sizing: border-box;
     }
-  },
-})
 
-</script>
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
 
-<template>
+    .form {
+      max-width: 48rem;
+      font-family: sans-serif;
+      font-size: 12px;
+    }
+
+    .h-table {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border-collapse: collapse;
+    }
+
+    .h-table .table-header {
+      text-align: center;
+
+      --tw-bg-opacity: 1;
+      background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
+    }
+
+    .h-table th,
+    .h-table td {
+      padding: 0.25rem;
+      vertical-align: middle;
+      border: 1px solid black;
+    }
+
+    .h-table th table th,
+    .h-table th table td,
+    .h-table td table th,
+    .h-table td table td {
+      padding: 0 1rem;
+      border: none;
+    }
+
+    .h-table th table th:first-child,
+    .h-table th table td:first-child,
+    .h-table td table th:first-child,
+    .h-table td table td:first-child {
+      border-right: 1px solid black;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0 0.25rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      text-align: left;
+
+      --tw-bg-opacity: 1;
+      background-color: rgba(219, 234, 254, var(--tw-bg-opacity));
+      border: none;
+      border-color: #6b7280;
+      border-width: 1px;
+      border-radius: 0;
+      appearance: none;
+    }
+
+    input[type="text"]:focus {
+      --tw-bg-opacity: 1;
+      background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
+      outline: none;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .borderless {
+      border: none;
+    }
+
+    .font-normal {
+      font-weight: 400;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
   <form class="form">
     <table class="border h-table">
       <thead>
@@ -37,74 +120,64 @@ export default defineComponent({
         <tr>
           <td class="text-center" colspan="4">
             Type of inspection:
-            <input
-              id="inspection-type-initial"
-              v-model="inspectionTypeInitial"
-              type="radio"
-              name="inspectionType"
-            />
+            <input id="inspection-type-initial" type="radio" name="inspectionType" />
             <label for="inspection-type-initial">Initial</label>
 
-            <input
-              id="inspection-type-subsequent"
-              v-model="inspectionTypeSubsequent"
-              type="radio"
-              name="inspectionType"
-            />
+            <input id="inspection-type-subsequent" type="radio" name="inspectionType" />
             <label for="inspection-type-subsequent">Subsequent</label>
           </td>
         </tr>
         <tr>
           <td>
             <label for="insured-name">Insured Name:</label>
-            <input id="insured-name" v-model="insuredName" type="text" name="insuredName" />
+            <input id="insured-name" type="text" name="insuredName" value="Victor Tolbert" />
           </td>
           <td>
             <label for="claim-number">Claim #:</label>
-            <input id="claim-number" v-model="claimNumber" type="text" name="claimNumber" />
+            <input id="claim-number" type="text" name="claimNumber" value="5456443XD" />
           </td>
           <td>
             <label for="loss-date">Date of Loss:</label>
-            <input id="loss-date" v-model="lossDate" type="text" name="lossDate" />
+            <input id="loss-date" type="text" name="lossDate" value="January 5, 2021" />
           </td>
           <td>
             <label for="inspection-date">Date of Inspection:</label>
-            <input id="inspection-date" v-model="inspectionDate" type="text" name="inspectionDate" />
+            <input id="inspection-date" type="text" name="inspectionDate" value="March 6, 2021" />
           </td>
         </tr>
         <tr>
           <td>
             <label for="loss-location">Loss Location:</label>
-            <input id="loss-location" v-model="lossLocation" type="text" name="lossLocation" />
+            <input id="loss-location" type="text" name="lossLocation" value="1234 ABC Street" />
           </td>
           <td>
             <label for="city">City:</label>
-            <input id="city" v-model="city" type="text" name="city" />
+            <input id="city" type="text" name="city" value="Atlanta" />
           </td>
           <td>
             <label for="state">State:</label>
-            <input id="state" v-model="state" type="text" name="state" />
+            <input id="state" type="text" name="state" value="GA" />
           </td>
           <td>
             <label for="postal-code">ZIP Code:</label>
-            <input id="postal-code" v-model="postalCode" type="text" name="postalCode" />
+            <input id="postal-code" type="text" name="postalCode" value="30316" />
           </td>
         </tr>
         <tr>
           <td colspan="2">
             <label for>Email Address:</label>
-            <input id v-model="emailAddress" type="text" name="emailAddress" />
+            <input id type="text" name />
           </td>
           <td class="text-center" colspan="2">
             <label style="display: block;">Insured on premises for inspection:</label>
-            <input id type="radio" name="insuredOnPremises" value="yes" />
+            <input id type="radio" name />
             Yes
-            <input id type="radio" name="insuredOnPremises" value="no" />
+            <input id type="radio" name />
             No
           </td>
         </tr>
         <tr>
-          <td colspan="7">
+          <td colspan="4">
             <label for style="display: block;">
               Any others present? (If yes list name and role, e.g., “John
               Smith, Contractor”):
@@ -853,7 +926,9 @@ export default defineComponent({
         </tr>
         <tr>
           <td colspan="5" class="text-center">
-            <input id type="checkbox" name />Check here if the inspection area/item list is continued below in “Additional Entries” section.
+            <input id type="checkbox" name />Check here if the inspection area/item list is continued below in
+            “Additional
+            Entries” section.
           </td>
         </tr>
       </tbody>
@@ -899,106 +974,6 @@ export default defineComponent({
       </thead>
     </table>
   </form>
-</template>
+</body>
 
-<style lang="scss">
-$blue: rgb(191, 219, 254);
-$light-blue: rgb(191, 219, 254, 0.5);
-
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-.form {
-  max-width: 48rem;
-  font-family: sans-serif;
-  font-size: 12px;
-}
-
-.h-table {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border-collapse: collapse;
-
-  .table-header {
-    text-align: center;
-    @apply bg-blue-300;
-  }
-
-  th,
-  td {
-    padding: 0.25rem;
-    vertical-align: middle;
-    border: 1px solid black;
-
-    /* padding: 0.25rem .5rem; */
-
-    /* background-color: #BFD3ED; */
-    table {
-      th,
-      td {
-        padding: 0 1rem;
-        border: none;
-      }
-      th:first-child,
-      td:first-child {
-        border-right: 1px solid black;
-      }
-    }
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 0 0.25rem;
-  font-family: monospace;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-  text-align: left;
-  @apply bg-blue-100;
-
-  /* background-color: #BFD3ED; */
-  border: none;
-  border-color: #6b7280;
-  border-width: 1px;
-  border-radius: 0;
-
-  appearance: none;
-}
-
-input[type="text"]:focus {
-  // background-color: $light-blue;
-  @apply bg-blue-200;
-  outline: none;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.borderless {
-  border: none;
-}
-
-.font-normal {
-  font-weight: 400;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-</style>
+</html>

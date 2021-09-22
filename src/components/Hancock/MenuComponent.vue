@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent, onMounted, reactive, toRefs, ComponentPublicInstance } from 'vue'
 import { SidebarItem } from 'vue-sidebar-menu'
-
 import {
   billingMenu,
   calendarMenu,
@@ -77,16 +76,16 @@ export default defineComponent({
     @item-click="onItemClick"
   >
     <template #header>
-      <router-link to="/" class="sidebar-header pl-2 flex py-2 text-brand-500 items-center">
+      <router-link to="/" class="flex py-2 pl-2 text-brand-500 sidebar-header items-center">
         <BaseLogo name="hancock-h" />
 
-        <span v-if="!collapsed" class="ml-1 font-bold leading-none" style="white-space: nowrap;">
-          Claims
-          <br />Consultants
+        <span v-if="!collapsed" class="font-bold leading-none ml-1" style="white-space: nowrap;">
+          Design
+          <br />Tokens
         </span>
       </router-link>
 
-      <div class="sidebar-profile-container mt-3 p-2">
+      <div class="mt-3 p-2 sidebar-profile-container">
         <router-link to="/user" class="flex text-white no-underline items-center hover:text-white">
           <BaseAvatar class="rounded-full h-11 w-11" />
 

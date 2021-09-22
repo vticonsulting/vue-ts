@@ -2,7 +2,7 @@
 import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Vue 3 TypeScript Sandbox',
+  title: 'Design Tokens',
   meta: [
     { name: 'description', content: 'Opinionated Vite Starter Template' },
   ],

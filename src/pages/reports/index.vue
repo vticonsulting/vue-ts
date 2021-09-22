@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 prose max-w-none">
+  <div class="mt-4 prose">
     <h2>Reports</h2>
 
     <table class="table bordered">
@@ -11,7 +11,12 @@
       <tbody>
         <tr>
           <td>
-            <router-link to="/reports/allstate/hic">Allstate HIC Form</router-link>
+            <router-link to="/reports/allstate/hic">Texas Allstate HIC Report</router-link>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <router-link to="/reports/allstate/hic-exact">Texas Allstate HIC Report (Exact)</router-link>
           </td>
         </tr>
       </tbody>

@@ -1,5 +1,5 @@
 <template>
-  <HicReport />
+  <HicReportExact />
 </template>
 
 <route lang="yaml">
