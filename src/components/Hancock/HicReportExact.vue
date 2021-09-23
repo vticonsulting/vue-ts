@@ -12,7 +12,7 @@
           <td colspan="4">
             <table>
               <tr>
-                <td class="text-center" style=" height: 20px; border-left: none;" colspan="4">
+                <td class="text-center" style="height: 20px; border-left: none;" colspan="4">
                   <div class="flex items-center justify-center">
                     <span>Type of inspection:</span>
                     <input
@@ -420,11 +420,11 @@
           <th class="table-header" colspan="5">INTERIOR</th>
         </tr>
         <tr>
-          <th colspan="5">
-            <section class="flex items-start w-full italic divide-x divide-dark-600">
+          <th colspan="5" class="text-left">
+            <section class="flex items-start w-full italic">
               <div
                 class="font-normal"
-                style="width: 336px; padding-top: 4px; padding-right: 10px; padding-left: 38px;"
+                style="width: 336px; padding-top: 4px; padding-right: 10px; padding-left: 38px; line-height: 1.5;"
               >
                 The customer/representative refused inspection of all or part of the interior
                 property at this time,
@@ -434,7 +434,7 @@
               </div>
               <div
                 class="font-normal"
-                style=" width: 388px; height: 82px; padding-top: 4px; padding-right: 14px; padding-left: 42px; border-left: 1px solid #000;"
+                style=" width: 388px; height: 82px; padding-top: 4px; padding-right: 14px; padding-left: 42px; line-height: 1.5; border-left: 1px solid #000;"
               >
                 The customer/representative refused inspection of all or part of the interior
                 property at this time,
@@ -1055,17 +1055,29 @@
           >An indication on this form that an item is or is not damaged, is not an indication or representation as to whether there is insurance coverage for that damage. All claims are subject to the terms of the insurance policy. All coverage determinations will be made by your Allstate Adjuster.</td>
         </tr>
         <tr>
-          <td>
-            Interior Inspected:
-            <input id type="radio" name /> Yes
-            <input id type="radio" name />No
-            <input id type="radio" name /> Refused
+          <td style="height: 19px;">
+            <div class="flex items-center">
+              <span>Interior Inspected:</span>
+              <input id style="margin-left: 42px;" type="radio" name />
+              <label style="margin-left: 3px;">Yes</label>
+              <input id style="margin-left: 27px;" type="radio" name />
+              <label style="margin-left: 3px;">No</label>
+              <input id style="margin-left: 24px;" type="radio" name />
+              <label style="margin-left: 2px;">Refused</label>
+            </div>
           </td>
-          <td colspan="2" style="width: 367px;">
-            Exterior Inspected:
-            <input id type="radio" name /> Yes
-            <input id type="radio" name /> No
-            <input id type="radio" name />Refused
+          <td colspan="2" style="width: 367px; padding-left: 3px;">
+            <div class="flex items-center">
+              <span style="margin-left: 3px;">Exterior Inspected:</span>
+              <div class="flex items-center">
+                <input id style="margin-left: 39px;" type="radio" name />
+                <label style="margin-left: 2px;">Yes</label>
+                <input id style="margin-left: 32px;" type="radio" name />
+                <label style="margin-left: 3px;">No</label>
+                <input id style="margin-left: 28px;" type="radio" name />
+                <label style="margin-left: 3px;">Refused</label>
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
@@ -1194,7 +1206,6 @@ html {
   border: 1px solid $color-black;
 
   .table-header {
-    text-align: center;
     background-color: #c6d9f1;
   }
 
@@ -1251,5 +1262,52 @@ input[type="text"] {
 input[type="text"]:focus {
   background-color: $color-white;
   outline: none;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.italic {
+  font-style: italic;
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.w-full {
+  width: 100%;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+.borderless {
+  border: none;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 </style>
