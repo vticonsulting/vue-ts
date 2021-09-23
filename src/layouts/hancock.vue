@@ -1,5 +1,6 @@
 <template>
   <div :class="['app-layout', collapsed ? 'collapsed' : '']">
+    Banner
     <header-component>
       <search-input-component></search-input-component>
     </header-component>

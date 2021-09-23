@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <PageHeading>Dashboard</PageHeading>
 </template>
 
 <route lang="yaml">

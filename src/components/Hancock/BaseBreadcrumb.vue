@@ -1,6 +1,6 @@
 <template>
   <nav class="flex" aria-label="Breadcrumb">
-    <ol role="list" class="list-none -ml-8 flex items-center space-x-4">
+    <ol role="list" class="flex items-center -ml-8 space-x-4 list-none">
       <li>
         <div>
           <router-link to="/" class="text-gray-400 hover:text-gray-500">
@@ -13,7 +13,7 @@
       <li class="hidden">
         <div class="flex items-center">
           <svg
-            class="flex-shrink-0 h-5 w-5 text-gray-300"
+            class="flex-shrink-0 w-5 h-5 text-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -31,7 +31,7 @@
       <li class="hidden">
         <div class="flex items-center">
           <svg
-            class="flex-shrink-0 h-5 w-5 text-gray-300"
+            class="flex-shrink-0 w-5 h-5 text-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 20 20"

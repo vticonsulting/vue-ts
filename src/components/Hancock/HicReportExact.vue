@@ -3,7 +3,7 @@
     <table class="hic-table">
       <thead>
         <tr>
-          <th colspan="4" class="table-header">TEXAS HOME INSPECTION CHECKLIST</th>
+          <th colspan="4" class="table-header bg-blue-300">TEXAS HOME INSPECTION CHECKLIST</th>
         </tr>
       </thead>
 
@@ -12,23 +12,26 @@
           <td colspan="4">
             <table>
               <tr>
-                <td class="text-center" colspan="4">
-                  Type of inspection:
-                  <input
-                    id="inspection-type-initial"
-                    v-model="inspectionTypeInitial"
-                    type="radio"
-                    name="inspectionType"
-                  />
-                  <label for="inspection-type-initial">Initial</label>
-
-                  <input
-                    id="inspection-type-subsequent"
-                    v-model="inspectionTypeSubsequent"
-                    type="radio"
-                    name="inspectionType"
-                  />
-                  <label for="inspection-type-subsequent">Subsequent</label>
+                <td class="text-center" style=" height: 20px; border-left: none;" colspan="4">
+                  <div class="flex items-center justify-center">
+                    <span>Type of inspection:</span>
+                    <input
+                      style="margin-left: 22px;"
+                      id="inspection-type-initial"
+                      v-model="inspectionTypeInitial"
+                      type="radio"
+                      name="inspectionType"
+                    />
+                    <label style="margin-left: 4px;" for="inspection-type-initial">Initial</label>
+                    <input
+                      style="margin-left: 40px;"
+                      id="inspection-type-subsequent"
+                      v-model="inspectionTypeSubsequent"
+                      type="radio"
+                      name="inspectionType"
+                    />
+                    <label style="margin-left: 6px;" for="inspection-type-subsequent">Subsequent</label>
+                  </div>
                 </td>
               </tr>
             </table>
@@ -39,19 +42,19 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 292px;">
+                <td style="width: 292px; padding-left: 6px; border-left: none;">
                   <label for="insured-name">Insured Name:</label>
                   <input id="insured-name" v-model="insuredName" type="text" name="insuredName" />
                 </td>
-                <td style="width: 188px;">
+                <td style="width: 188px; padding-left: 7px;">
                   <label for="claim-number">Claim #:</label>
                   <input id="claim-number" v-model="claimNumber" type="text" name="claimNumber" />
                 </td>
-                <td style="width: 102px;">
+                <td style="width: 102px; padding-left: 7px;">
                   <label for="loss-date">Date of Loss:</label>
                   <input id="loss-date" v-model="lossDate" type="text" name="lossDate" />
                 </td>
-                <td style="width: 142px;">
+                <td style="width: 142px; padding-left: 8px;">
                   <label for="inspection-date">Date of Inspection:</label>
                   <input
                     id="inspection-date"
@@ -69,21 +72,34 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 360px;">
-                  <label for="loss-location">Loss Location:</label>
-                  <input id="loss-location" v-model="lossLocation" type="text" name="lossLocation" />
+                <td style="width: 360px; padding-left: 6px; border-left: none;">
+                  <div class="flex items-center">
+                    <label class="whitespace-nowrap" for="loss-location">Loss Location:</label>
+                    <input
+                      id="loss-location"
+                      v-model="lossLocation"
+                      type="text"
+                      name="lossLocation"
+                    />
+                  </div>
                 </td>
-                <td style="width: 144px;">
-                  <label for="city">City:</label>
-                  <input id="city" v-model="city" type="text" name="city" />
+                <td style="width: 144px; padding-left: 7px;">
+                  <div class="flex items-center">
+                    <label for="city">City:</label>
+                    <input id="city" v-model="city" type="text" name="city" />
+                  </div>
                 </td>
-                <td style="width: 78px;">
-                  <label for="state">State:</label>
-                  <input id="state" v-model="state" type="text" name="state" />
+                <td style="width: 78px; padding-left: 7px;">
+                  <div class="flex items-center">
+                    <label for="state">State:</label>
+                    <input id="state" v-model="state" type="text" name="state" />
+                  </div>
                 </td>
-                <td style="width: 142px;">
-                  <label for="postal-code">ZIP Code:</label>
-                  <input id="postal-code" v-model="postalCode" type="text" name="postalCode" />
+                <td style="width: 142px; padding-left: 7px;">
+                  <div class="flex items-center">
+                    <label class="whitespace-nowrap" for="postal-code">ZIP Code:</label>
+                    <input id="postal-code" v-model="postalCode" type="text" name="postalCode" />
+                  </div>
                 </td>
               </tr>
             </table>
@@ -94,7 +110,7 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 490px;">
+                <td style="width: 490px; padding-left: 6px; border-left: none;">
                   <label for>Email Address:</label>
                   <input id v-model="emailAddress" type="text" name="emailAddress" />
                 </td>
@@ -111,6 +127,7 @@
         </tr>
       </tbody>
     </table>
+    <p>Please complete the interior and exterior checklists, indicating “Yes” if the item/area has damage then use the “Notes” section to describe any pre-existing or non-related damage. Indicate “No” if there is no damage to the item/area. Mark “N/A” if the area does not exist.</p>
   </form>
 </template>
 
@@ -142,6 +159,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@import "../../styles/hancock/variables";
+
 $color-blue: rgb(191, 219, 254);
 $color-blue-light: rgb(191, 219, 254, 0.5);
 $color-gray: #ccc;
@@ -157,12 +176,13 @@ html {
 }
 
 .hic-report {
+  width: 724px;
   font-family: Arial, sans-serif;
   font-size: 11px;
 }
 
 .hic-table {
-  width: 724px;
+  width: 100%;
   padding: 0;
   margin: 0;
   border-collapse: collapse;
@@ -196,7 +216,7 @@ input[type="text"] {
   font-size: 0.8rem;
   line-height: 1.5rem;
   text-align: left;
-  background-color: $color-blue-light;
+  background-color: $color-white;
 
   border: none;
   border-color: #6b7280;

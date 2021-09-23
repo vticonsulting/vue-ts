@@ -85,6 +85,9 @@ export default defineConfig({
         secondary: colors.gray,
         brand: colors.gray,
       },
+      fontSize: {
+        '2xs': '.625rem', // 10px
+      },
       typography: {
         DEFAULT: {
           css: {
