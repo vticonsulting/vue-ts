@@ -27,6 +27,7 @@ import 'virtual:windi-utilities.css'
 
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
+import AppNavbar from '~/components/Hancock/AppNavbar.vue'
 
 export default {
   name: 'VueLayoutComponent',
