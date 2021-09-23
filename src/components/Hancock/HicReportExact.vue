@@ -12,7 +12,11 @@
           <td colspan="4">
             <table>
               <tr>
-                <td class="text-center" style="height: 20px; border-left: none;" colspan="4">
+                <td
+                  class="text-center"
+                  style="height: 20px; border-left: none;"
+                  colspan="4"
+                >
                   <div class="flex items-center justify-center">
                     <span>Type of inspection:</span>
                     <input
@@ -22,7 +26,10 @@
                       type="radio"
                       name="inspectionType"
                     />
-                    <label style="margin-left: 4px;" for="inspection-type-initial">Initial</label>
+                    <label
+                      style="margin-left: 4px;"
+                      for="inspection-type-initial"
+                    >Initial</label>
                     <input
                       id="inspection-type-subsequent"
                       v-model="inspectionTypeSubsequent"
@@ -30,7 +37,10 @@
                       type="radio"
                       name="inspectionType"
                     />
-                    <label style="margin-left: 6px;" for="inspection-type-subsequent">Subsequent</label>
+                    <label
+                      style="margin-left: 6px;"
+                      for="inspection-type-subsequent"
+                    >Subsequent</label>
                   </div>
                 </td>
               </tr>
@@ -42,23 +52,42 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 292px; padding-left: 6px; border-left: none;">
+                <td style="width: 292px; height: 34px; padding: 0 6px; border-left: none;">
                   <label for="insured-name">Insured Name:</label>
-                  <input id="insured-name" v-model="insuredName" type="text" name="insuredName" />
+                  <input
+                    id="insured-name"
+                    v-model="insuredName"
+                    style="height: 17px;"
+                    type="text"
+                    name="insuredName"
+                  />
                 </td>
-                <td style="width: 188px; padding-left: 7px;">
+                <td style="width: 188px; padding: 0 6px;">
                   <label for="claim-number">Claim #:</label>
-                  <input id="claim-number" v-model="claimNumber" type="text" name="claimNumber" />
+                  <input
+                    id="claim-number"
+                    v-model="claimNumber"
+                    style="height: 17px;"
+                    type="text"
+                    name="claimNumber"
+                  />
                 </td>
-                <td style="width: 102px; padding-left: 7px;">
+                <td style="width: 102px; padding: 0 7px;">
                   <label for="loss-date">Date of Loss:</label>
-                  <input id="loss-date" v-model="lossDate" type="text" name="lossDate" />
+                  <input
+                    id="loss-date"
+                    v-model="lossDate"
+                    style="height: 17px;"
+                    type="text"
+                    name="lossDate"
+                  />
                 </td>
-                <td style="width: 142px; padding-left: 8px;">
+                <td style="width: 142px; padding: 0 8px;">
                   <label for="inspection-date">Date of Inspection:</label>
                   <input
                     id="inspection-date"
                     v-model="inspectionDate"
+                    style="height: 17px;"
                     type="text"
                     name="inspectionDate"
                   />
@@ -72,33 +101,43 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 360px; padding-left: 6px; border-left: none;">
+                <td style="width: 360px; height: 17px; padding-left: 6px; border-left: none;">
                   <div class="flex items-center">
-                    <label class="whitespace-nowrap" for="loss-location">Loss Location:</label>
+                    <label
+                      class="whitespace-nowrap"
+                      for="loss-location"
+                    >Loss Location:</label>
                     <input
                       id="loss-location"
                       v-model="lossLocation"
+                      style="height: 17px;"
                       type="text"
                       name="lossLocation"
                     />
                   </div>
                 </td>
-                <td style="width: 144px; padding-left: 7px;">
+                <td style="width: 144px; padding: 0 7px;">
                   <div class="flex items-center">
                     <label for="city">City:</label>
-                    <input id="city" v-model="city" type="text" name="city" />
+                    <input id="city" v-model="city" style="height: 17px;" type="text" name="city" />
                   </div>
                 </td>
-                <td style="width: 78px; padding-left: 7px;">
+                <td style="width: 78px; padding: 0 7px;">
                   <div class="flex items-center">
                     <label for="state">State:</label>
-                    <input id="state" v-model="state" type="text" name="state" />
+                    <input id="state" v-model="state" style="height: 17px;" type="text" name="state" />
                   </div>
                 </td>
-                <td style="width: 142px; padding-left: 7px;">
+                <td style="width: 142px; padding: 0 7px;">
                   <div class="flex items-center">
                     <label class="whitespace-nowrap" for="postal-code">ZIP Code:</label>
-                    <input id="postal-code" v-model="postalCode" type="text" name="postalCode" />
+                    <input
+                      id="postal-code"
+                      v-model="postalCode"
+                      style="height: 17px;"
+                      type="text"
+                      name="postalCode"
+                    />
                   </div>
                 </td>
               </tr>
@@ -110,25 +149,61 @@
           <td colspan="4">
             <table>
               <tr>
-                <td style="width: 490px; padding-left: 6px; border-left: none;">
-                  <label for>Email Address:</label>
-                  <input id v-model="emailAddress" type="text" name="emailAddress" />
+                <td style="width: 490px; height: 34px; padding-left: 6px; border-left: none;">
+                  <div class="flex items-start">
+                    <label class="whitespace-nowrap" for>Email Address:</label>
+                    <input
+                      id
+                      v-model="emailAddress"
+                      style="height: 31px; font-size: 18px;"
+                      type="text"
+                      name="emailAddress"
+                    />
+                  </div>
                 </td>
                 <td style="width: 234px;" class="text-center">
-                  <label style="display: block;">Insured on premises for inspection:</label>
+                  <label
+                    style="display: block;"
+                  >Insured on premises for inspection:</label>
                   <input id type="radio" name="insuredOnPremises" value="yes" />
                   Yes
-                  <input id type="radio" name="insuredOnPremises" value="no" />
+                  <input
+                    id
+                    type="radio"
+                    name="insuredOnPremises"
+                    value="no"
+                  />
                   No
                 </td>
               </tr>
             </table>
           </td>
         </tr>
+
+        <tr>
+          <td colspan="4">
+            <table>
+              <tbody>
+                <tr>
+                  <td style="height: 33px; padding: 0 7px; border-left: none;">
+                    <label>Any others present? (If yes list name and role, e.g., “John Smith, Contractor”):</label>
+                    <input
+                      id
+                      style="height: 17px;"
+                      type="text"
+                      name
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </td>
+        </tr>
       </tbody>
     </table>
 
-    <p style="margin: 0;">
+    <p style="height: 30px; padding-left: 4px; margin: 2px 0 0; line-height: 1.25;">
       Please complete the interior and exterior checklists, indicating
       <b>“Yes”</b> if the item/area has damage then use the “Notes” section to describe any pre-existing or non-related damage. Indicate
       <b>“No”</b> if there is no damage to the item/area. Mark
@@ -142,14 +217,14 @@
         </tr>
         <tr>
           <th></th>
-          <th colspan="3" class="text-center" style="width: 116px;">Inspection Damage</th>
+          <th colspan="3" class="text-center" style="width: 116px; height: 20px;">Inspection Damage</th>
           <th
             rowspan="2"
             style="padding-left: 3px;"
           >Notes (Include date and whether repairs were completed; please be concise)</th>
         </tr>
         <tr>
-          <th style="width: 106px; padding-left: 3px;">Area/Item</th>
+          <th style="width: 106px; height: 17px; padding-left: 3px;">Area/Item</th>
           <th class="text-center" style="width: 38px;">Yes</th>
           <th class="text-center" style="width: 38px;">No</th>
           <th class="text-center" style="width: 38px;">N/A</th>
@@ -157,7 +232,7 @@
       </thead>
       <tbody>
         <tr>
-          <td style="padding-left: 3px;">Roof</td>
+          <td style="height: 17px; padding-left: 3px;">Roof</td>
           <td class="text-center">
             <input id type="radio" name="roof" />
           </td>
@@ -167,12 +242,12 @@
           <td class="text-center">
             <input id type="radio" name="roof" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">
+          <td style="height: 17px; padding-left: 3px;">
             Siding (if “Yes”
             <br />indicate elevation)
           </td>
@@ -185,12 +260,12 @@
           <td class="text-center">
             <input id type="radio" name="siding" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Gutters/Downspouts</td>
+          <td style="height: 17px; padding-left: 3px;">Gutters/<br>Downspouts</td>
           <td class="text-center">
             <input id type="radio" name="gutters" />
           </td>
@@ -200,12 +275,12 @@
           <td class="text-center">
             <input id type="radio" name="gutters" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Windows</td>
+          <td style="height: 17px; padding-left: 3px;">Windows</td>
           <td class="text-center">
             <input id type="radio" name="windows" />
           </td>
@@ -215,12 +290,12 @@
           <td class="text-center">
             <input id type="radio" name="windows" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Screens</td>
+          <td style="height: 17px; padding-left: 3px;">Screens</td>
           <td class="text-center">
             <input id type="radio" name="screens" />
           </td>
@@ -230,12 +305,12 @@
           <td class="text-center">
             <input id type="radio" name="screens" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Doors</td>
+          <td style="height: 17px; padding-left: 3px;">Doors</td>
           <td class="text-center">
             <input id type="radio" name="doors" />
           </td>
@@ -245,12 +320,12 @@
           <td class="text-center">
             <input id type="radio" name="doors" />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Patio</td>
+          <td style="height: 17px; padding-left: 3px;">Patio</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -260,12 +335,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Patio Covering</td>
+          <td style="height: 17px; padding-left: 3px;">Patio Covering</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -275,12 +350,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Garage</td>
+          <td style="height: 17px; padding-left: 3px;">Garage</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -290,12 +365,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Carport</td>
+          <td style="height: 17px; padding-left: 3px;">Carport</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -305,12 +380,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Pool Enclosure</td>
+          <td style="height: 17px; padding-left: 3px;">Pool Enclosure</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -320,12 +395,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">A/C Unit</td>
+          <td style="height: 17px; padding-left: 3px;">A/C Unit</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -335,12 +410,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Deck</td>
+          <td style="height: 17px; padding-left: 3px;">Deck</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -350,12 +425,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Shed/Outbuilding</td>
+          <td style="height: 17px; padding-left: 3px;">Shed/Outbuilding</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -365,12 +440,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Fence</td>
+          <td style="height: 17px; padding-left: 3px;">Fence</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -380,12 +455,12 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 3px;">Mailbox</td>
+          <td style="height: 17px; padding-left: 3px;">Mailbox</td>
           <td class="text-center">
             <input id type="radio" name />
           </td>
@@ -395,7 +470,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -434,7 +509,7 @@
               </div>
               <div
                 class="font-normal"
-                style=" width: 388px; height: 82px; padding-top: 4px; padding-right: 14px; padding-left: 42px; line-height: 1.5; border-left: 1px solid #000;"
+                style=" width: 386px; height: 82px; padding-top: 4px; padding-right: 14px; padding-left: 42px; line-height: 1.5; border-left: 1px solid #000;"
               >
                 The customer/representative refused inspection of all or part of the interior
                 property at this time,
@@ -450,7 +525,9 @@
         <tr>
           <th></th>
           <th colspan="3" class="text-center">Inspection Damage</th>
-          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
+          <th
+            rowspan="2"
+          >Notes (Include date and whether repairs were completed; please be concise)</th>
         </tr>
         <tr>
           <th style="width: 106px; padding-left: 3px;">Area/Item</th>
@@ -471,7 +548,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -486,7 +563,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -501,7 +578,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -516,7 +593,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -531,7 +608,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -546,7 +623,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -561,7 +638,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -576,7 +653,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -591,7 +668,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -606,7 +683,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -630,7 +707,9 @@
         <tr>
           <th></th>
           <th colspan="3" class="text-center">Inspection Damage</th>
-          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
+          <th
+            rowspan="2"
+          >Notes (Include date and whether repairs were completed; please be concise)</th>
         </tr>
         <tr>
           <th style="width: 106px; padding-left: 3px;">Area/Item</th>
@@ -651,7 +730,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -666,7 +745,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -681,7 +760,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -696,7 +775,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -711,7 +790,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -726,7 +805,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -741,7 +820,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -756,7 +835,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -771,7 +850,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -786,7 +865,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -801,7 +880,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -816,7 +895,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -831,7 +910,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -846,7 +925,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -861,7 +940,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -876,7 +955,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -891,7 +970,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -906,7 +985,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td>
+          <td style="height: 17px; padding: 0 6px;">
             <input id type="text" name />
           </td>
         </tr>
@@ -924,6 +1003,8 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="pagebreak"></div>
 
     <table class="mt-4 hic-table additional-entries">
       <thead>
@@ -972,7 +1053,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td class="text-center">
+          <td style="padding: 0 6px;" class="text-center">
             <input id type="text" name />
           </td>
         </tr>
@@ -987,6 +1068,8 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="pagebreak"></div>
 
     <table class="mt-4 hic-table additional-entries">
       <thead>
@@ -1035,7 +1118,7 @@
           <td class="text-center">
             <input id type="radio" name />
           </td>
-          <td class="text-center">
+          <td style="padding: 0 6px;" class="text-center">
             <input id type="text" name />
           </td>
         </tr>
@@ -1082,7 +1165,7 @@
         </tr>
         <tr>
           <td colspan="2">Insured/Representative Name (Print):</td>
-          <td rowspan="2" class="align-top" style="width: 145px;">
+          <td rowspan="2" class="align-top" style="width: 145px; padding: 0 6px;">
             <div class="flex flex-col">
               <label>Date:</label>
               <input type="text" />
@@ -1097,7 +1180,7 @@
             Printed Name of Person Completing
             <br />the Form for the Insurer:
           </td>
-          <td rowspan="2" class="align-top" style="width: 145px;">
+          <td rowspan="2" class="align-top" style="width: 145px; padding: 0 6px;">
             <div class="flex flex-col">
               <label>Date:</label>
               <input type="text" />
@@ -1121,22 +1204,25 @@
       </thead>
       <tbody>
         <tr>
-          <td>
+          <td style="height: 19px; padding-right: 54px;">
             <div class="flex items-center justify-between">
-              <span>A completed copy of this document was provided to the customer.</span>
-              <div>
+              <span>A completed copy of this document was provided to the customer via:</span>
+              <div class="flex items-center">
                 <input id type="radio" name />
-                <label>email</label>
-                <input id type="radio" name />
-                <label>print</label>
-                <input id type="radio" name />
-                <label>both</label>
+                <label style="margin-left: 2px;">email</label>
+                <input id style="margin-left: 12px;" type="radio" name />
+                <label style="margin-left: 3px;">print</label>
+                <input id style="margin-left: 10px;" type="radio" name />
+                <label style="margin-left: 3px;">both</label>
               </div>
             </div>
           </td>
         </tr>
         <tr>
-          <td style=" height: 20px; background-color: #f1f1f1;">
+          <td
+            class="font-bold"
+            style="height: 19px; padding-right: 36px; background-color: #f1f1f1;"
+          >
             <div class="flex items-center justify-between w-full">
               <span>Claim #:</span>
               <span>Page 3 of 3</span>
@@ -1184,46 +1270,53 @@ $color-gray: #ccc;
 $color-black: #000;
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+@media print {
+    .pagebreak {
+        page-break-before: always;
+    } /* page-break-after works, as well */
 }
 
 .hic-report {
-  width: 724px;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
+    width: 724px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
 }
 
 .hic-table {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border-collapse: collapse;
-  border: 1px solid $color-black;
-
-  .table-header {
-    background-color: #c6d9f1;
-  }
-
-  th,
-  td {
-    padding: 0;
-    vertical-align: middle;
-  }
-
-  table {
     width: 100%;
+    padding: 0;
+    margin: 0;
     border-collapse: collapse;
+    border: 1px solid $color-black;
 
-    td {
-      border-top: 1px solid $color-black;
-      border-left: 1px solid $color-black;
+    .table-header {
+        background-color: #c6d9f1;
+        height: 17px;
     }
-  }
+
+    th,
+    td {
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        td {
+            border-top: 1px solid $color-black;
+            border-left: 1px solid $color-black;
+        }
+    }
 }
 
 .hic-table.exterior,
@@ -1231,83 +1324,87 @@ html {
 .hic-table.additional-entries,
 .hic-table.signatures,
 .hic-table.copy-provided-to-customer {
-  th,
-  td {
-    border: 1px solid $color-black;
-  }
+    th,
+    td {
+        border: 1px solid $color-black;
+    }
 
-  tbody th:first-child,
-  tbody td:first-child {
-    padding-left: 3px;
-  }
+    tbody th:first-child,
+    tbody td:first-child {
+        padding-left: 3px;
+    }
 }
 
 input[type="text"] {
-  width: 100%;
-  padding: 0 0.25rem;
-  font-family: monospace;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-  text-align: left;
-  background-color: $color-blue-light;
+    width: 100%;
+    padding: 0 0.25rem;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: left;
+    background-color: $color-blue-light;
 
-  border: none;
-  border-color: #6b7280;
-  border-width: 1px;
-  border-radius: 0;
+    border: none;
+    border-color: #6b7280;
+    border-width: 1px;
+    border-radius: 0;
 
-  appearance: none;
+    appearance: none;
 }
 
 input[type="text"]:focus {
-  background-color: $color-white;
-  outline: none;
+    background-color: $color-white;
+    outline: none;
 }
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 .flex {
-  display: flex;
+    display: flex;
 }
 .flex-col {
-  flex-direction: column;
+    flex-direction: column;
 }
 .items-start {
-  align-items: flex-start;
+    align-items: flex-start;
 }
 .items-center {
-  align-items: center;
+    align-items: center;
 }
 .justify-center {
-  justify-content: center;
+    justify-content: center;
 }
 .justify-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 .align-middle {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 .w-full {
-  width: 100%;
+    width: 100%;
 }
 .whitespace-nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 .borderless {
-  border: none;
+    border: none;
 }
 
 .font-normal {
-  font-weight: 400;
+    font-weight: 400;
 }
-
+.font-bold {
+    font-weight: 600;
+}
 .mt-4 {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 </style>
