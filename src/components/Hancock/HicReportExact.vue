@@ -1101,12 +1101,37 @@
       </tbody>
     </table>
 
-    <table class="mt-4 hic-table">
+    <table class="mt-4 hic-table copy-provided-to-customer">
       <thead>
         <tr>
-          <th class="table-header" colspan="7">COPY PROVIDED TO CUSTOMER</th>
+          <th class="table-header">COPY PROVIDED TO CUSTOMER</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="flex items-center justify-between">
+              <span>A completed copy of this document was provided to the customer.</span>
+              <div>
+                <input id type="radio" name />
+                <label>email</label>
+                <input id type="radio" name />
+                <label>print</label>
+                <input id type="radio" name />
+                <label>both</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style=" height: 20px; background-color: #f1f1f1;">
+            <div class="flex items-center justify-between w-full">
+              <span>Claim #:</span>
+              <span>Page 3 of 3</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </form>
 </template>
@@ -1193,7 +1218,8 @@ html {
 .hic-table.exterior,
 .hic-table.interior,
 .hic-table.additional-entries,
-.hic-table.signatures {
+.hic-table.signatures,
+.hic-table.copy-provided-to-customer {
   th,
   td {
     border: 1px solid $color-black;
