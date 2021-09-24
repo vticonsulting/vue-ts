@@ -12,11 +12,7 @@
           <td colspan="4">
             <table>
               <tr>
-                <td
-                  class="text-center"
-                  style="height: 20px; border-left: none;"
-                  colspan="4"
-                >
+                <td class="text-center" style="height: 20px; border-left: none;" colspan="4">
                   <div class="flex items-center justify-center">
                     <span>Type of inspection:</span>
                     <input
@@ -26,10 +22,7 @@
                       type="radio"
                       name="inspectionType"
                     />
-                    <label
-                      style="margin-left: 4px;"
-                      for="inspection-type-initial"
-                    >Initial</label>
+                    <label style="margin-left: 4px;" for="inspection-type-initial">Initial</label>
                     <input
                       id="inspection-type-subsequent"
                       v-model="inspectionTypeSubsequent"
@@ -37,10 +30,7 @@
                       type="radio"
                       name="inspectionType"
                     />
-                    <label
-                      style="margin-left: 6px;"
-                      for="inspection-type-subsequent"
-                    >Subsequent</label>
+                    <label style="margin-left: 6px;" for="inspection-type-subsequent">Subsequent</label>
                   </div>
                 </td>
               </tr>
@@ -103,10 +93,7 @@
               <tr>
                 <td style="width: 360px; height: 17px; padding-left: 6px; border-left: none;">
                   <div class="flex items-center">
-                    <label
-                      class="whitespace-nowrap"
-                      for="loss-location"
-                    >Loss Location:</label>
+                    <label class="whitespace-nowrap" for="loss-location">Loss Location:</label>
                     <input
                       id="loss-location"
                       v-model="lossLocation"
@@ -125,7 +112,13 @@
                 <td style="width: 78px; padding: 0 7px;">
                   <div class="flex items-center">
                     <label for="state">State:</label>
-                    <input id="state" v-model="state" style="height: 17px;" type="text" name="state" />
+                    <input
+                      id="state"
+                      v-model="state"
+                      style="height: 17px;"
+                      type="text"
+                      name="state"
+                    />
                   </div>
                 </td>
                 <td style="width: 142px; padding: 0 7px;">
@@ -162,13 +155,18 @@
                   </div>
                 </td>
                 <td style="width: 234px;" class="text-center">
-                  <label
-                    style="display: block;"
-                  >Insured on premises for inspection:</label>
-                  <input id type="radio" name="insuredOnPremises" value="yes" />
+                  <label style="display: block;">Insured on premises for inspection:</label>
+                  <input
+                    id="insured-on-premises-yes"
+                    v-model="insuredOnPremises"
+                    type="radio"
+                    name="insuredOnPremises"
+                    value="yes"
+                  />
                   Yes
                   <input
-                    id
+                    id="insured-on-premises-no"
+                    v-model="insuredOnPremises"
                     type="radio"
                     name="insuredOnPremises"
                     value="no"
@@ -186,18 +184,20 @@
               <tbody>
                 <tr>
                   <td style="height: 33px; padding: 0 7px; border-left: none;">
-                    <label>Any others present? (If yes list name and role, e.g., “John Smith, Contractor”):</label>
+                    <label
+                      for="others-present"
+                    >Any others present? (If yes list name and role, e.g., “John Smith, Contractor”):</label>
                     <input
-                      id
+                      id="others-present"
+                      v-model="othersPresent"
                       style="height: 17px;"
                       type="text"
-                      name
+                      name="othersPresent"
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
-
           </td>
         </tr>
       </tbody>
@@ -234,16 +234,16 @@
         <tr>
           <td style="height: 17px; padding-left: 3px;">Roof</td>
           <td class="text-center">
-            <input id type="radio" name="roof" />
+            <input v-model="roof" value="yes" type="radio" name="roof" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="roof" />
+            <input v-model="roof" value="no" type="radio" name="roof" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="roof" />
+            <input v-model="roof" value="n/a" type="radio" name="roof" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="roofNote" type="text" name="roofNote" />
           </td>
         </tr>
         <tr>
@@ -252,232 +252,235 @@
             <br />indicate elevation)
           </td>
           <td class="text-center">
-            <input id type="radio" name="siding" />
+            <input v-model="siding" value="yes" type="radio" name="siding" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="siding" />
+            <input v-model="siding" value="no" type="radio" name="siding" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="siding" />
+            <input v-model="siding" value="n/a" type="radio" name="siding" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="sidingNote" type="text" name="sidingNote" />
           </td>
         </tr>
         <tr>
-          <td style="height: 17px; padding-left: 3px;">Gutters/<br>Downspouts</td>
+          <td style="height: 17px; padding-left: 3px;">
+            Gutters/
+            <br />Downspouts
+          </td>
           <td class="text-center">
-            <input id type="radio" name="gutters" />
+            <input v-model="gutters" value="yes" type="radio" name="gutters" />
           </td>
           <td class="text-center align-middle">
-            <input id type="radio" name="gutters" />
+            <input v-model="gutters" value="no" type="radio" name="gutters" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="gutters" />
+            <input v-model="gutters" value="n/a" type="radio" name="gutters" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="guttersNote" type="text" name="guttersNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Windows</td>
           <td class="text-center">
-            <input id type="radio" name="windows" />
+            <input v-model="windows" value="yes" type="radio" name="windows" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="windows" />
+            <input v-model="windows" value="no" type="radio" name="windows" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="windows" />
+            <input v-model="windows" value="n/a" type="radio" name="windows" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="windowsNote" type="text" name="windowsNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Screens</td>
           <td class="text-center">
-            <input id type="radio" name="screens" />
+            <input v-model="screens" value="yes" type="radio" name="screens" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="screens" />
+            <input v-model="screens" value="no" type="radio" name="screens" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="screens" />
+            <input v-model="screens" value="n/a" type="radio" name="screens" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="screensNote" type="text" name="screensNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Doors</td>
           <td class="text-center">
-            <input id type="radio" name="doors" />
+            <input v-model="doors" value="yes" type="radio" name="doors" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="doors" />
+            <input v-model="doors" value="no" type="radio" name="doors" />
           </td>
           <td class="text-center">
-            <input id type="radio" name="doors" />
+            <input v-model="doors" value="n/a" type="radio" name="doors" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="doorsNote" type="text" name="doorsNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Patio</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patio" value="yes" type="radio" name="patio" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patio" value="no" type="radio" name="patio" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patio" value="n/a" type="radio" name="patio" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="patioNote" type="text" name="patioNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Patio Covering</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patioCovering" value="yes" type="radio" name="patioCovering" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patioCovering" value="no" type="radio" name="patioCovering" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="patioCovering" value="n/a" type="radio" name="patioCovering" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="patioCoveringNote" type="text" name="patioCoveringNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Garage</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageExterior" value="yes" type="radio" name="garageExterior" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageExterior" value="no" type="radio" name="garageExterior" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageExterior" value="n/a" type="radio" name="garageExterior" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="garageExteriorNote" type="text" name="garageExterior" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Carport</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="carport" value="yes" type="radio" name="carport" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="carport" value="no" type="radio" name="carport" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="carport" value="n/a" type="radio" name="carport" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="carportNote" type="text" name="carportNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Pool Enclosure</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="poolEnclosure" value="yes" type="radio" name="poolEnclosure" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="poolEnclosure" value="no" type="radio" name="poolEnclosure" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="poolEnclosure" value="n/a" type="radio" name="poolEnclosure" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="poolEnclosureNote" type="text" name="poolEnclosureNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">A/C Unit</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="acUnit" value="yes" type="radio" name="acUnit" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="acUnit" value="no" type="radio" name="acUnit" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="acUnit" value="n/a" type="radio" name="acUnit" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="acUnitNote" type="text" name="acUnitNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Deck</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="deck" value="yes" type="radio" name="deck" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="deck" value="no" type="radio" name="deck" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="deck" value="n/a" type="radio" name="deck" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="deckNote" type="text" name="deckNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Shed/Outbuilding</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="shed" value="yes" type="radio" name="shed" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="shed" value="no" type="radio" name="shed" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="shed" value="n/a" type="radio" name="shed" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="shedNote" type="text" name="shedNote" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Fence</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="fence" value="yes" type="radio" name="fence" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="fence" value="no" type="radio" name="fence" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="fence" value="n/a" type="radio" name="fence" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="fenceNote" type="text" name="fence" />
           </td>
         </tr>
         <tr>
           <td style="height: 17px; padding-left: 3px;">Mailbox</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="mailbox" value="yes" type="radio" name="mailbox" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="mailbox" value="no" type="radio" name="mailbox" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="mailbox" value="n/a" type="radio" name="mailbox" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="mailboxNote" type="text" name="mailboxNote" />
           </td>
         </tr>
         <tr>
           <td colspan="5" class="text-center">
             <div class="flex items-center justify-center">
-              <input id type="checkbox" name />
+              <input type="checkbox" name />
               <span style="margin-left: 8px; font-style: italic;">
                 Check here if the
                 inspection area/item list is
@@ -524,13 +527,11 @@
         </tr>
         <tr>
           <th></th>
-          <th colspan="3" class="text-center">Inspection Damage</th>
-          <th
-            rowspan="2"
-          >Notes (Include date and whether repairs were completed; please be concise)</th>
+          <th colspan="3" class="text-center" style="height: 20px;">Inspection Damage</th>
+          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
         </tr>
         <tr>
-          <th style="width: 106px; padding-left: 3px;">Area/Item</th>
+          <th style="width: 106px; height: 17px; padding-left: 3px;">Area/Item</th>
           <th class="text-center">Yes</th>
           <th class="text-center">No</th>
           <th class="text-center">N/A</th>
@@ -540,151 +541,151 @@
         <tr>
           <td>Living Room</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="livingRoom" value="yes" type="radio" name="livingRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="livingRoom" value="no" type="radio" name="livingRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="livingRoom" value="n/a" type="radio" name="livingRoom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="livingRoomNote" type="text" name="livingRoomNote" />
           </td>
         </tr>
         <tr>
           <td>Family Room</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="familyRoom" value="yes" type="radio" name="familyRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="familyRoom" value="no" type="radio" name="familyRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="familyRoom" value="n/a" type="radio" name="familyRoom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="familyRoomNote" type="text" name="familyRoomNote" />
           </td>
         </tr>
         <tr>
           <td>Dining Room</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="diningRoom" value="yes" type="radio" name="diningRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="diningRoom" value="no" type="radio" name="diningRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="diningRoom" value="n/a" type="radio" name="diningRoom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="diningRoomNote" type="text" name="diningRoomNote" />
           </td>
         </tr>
         <tr>
           <td>Kitchen</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="kitchen" value="yes" type="radio" name="kitchen" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="kitchen" value="no" type="radio" name="kitchen" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="kitchen" value="n/a" type="radio" name="kitchen" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="kitchenNote" type="text" name="kitchenNote" />
           </td>
         </tr>
         <tr>
           <td>Breakfast Area</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="breakfastArea" value="yes" type="radio" name="breakfastArea" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="breakfastArea" value="no" type="radio" name="breakfastArea" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="breakfastArea" value="n/a" type="radio" name="breakfastArea" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="breakfastAreaNote" type="text" name="breakfastAreaNote" />
           </td>
         </tr>
         <tr>
           <td>Pantry</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="pantry" value="yes" type="radio" name="pantry" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="pantry" value="no" type="radio" name="pantry" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="pantry" value="n/a" type="radio" name="pantry" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="pantryNote" type="text" name="pantryNote" />
           </td>
         </tr>
         <tr>
           <td>Foyer</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="foyer" value="yes" type="radio" name="foyer" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="foyer" value="no" type="radio" name="foyer" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="foyer" value="n/a" type="radio" name="foyer" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="foyerNote" type="text" name="foyerNote" />
           </td>
         </tr>
         <tr>
           <td>Game Room</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gameRoom" value="yes" type="radio" name="gameRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gameRoom" value="no" type="radio" name="gameRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gameRoom" value="n/a" type="radio" name="gameRoom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="gameRoomNote" type="text" name="gameRoomNote" />
           </td>
         </tr>
         <tr>
           <td>Office/Study</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="office" value="yes" type="radio" name="office" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="office" value="no" type="radio" name="office" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="office" value="n/a" type="radio" name="office" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="officeNote" type="text" name="officeNote" />
           </td>
         </tr>
         <tr>
           <td>Hall</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hall" value="yes" type="radio" name="hall" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hall" value="no" type="radio" name="hall" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hall" value="n/a" type="radio" name="hall" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="hallNote" type="text" name="hallNote" />
           </td>
         </tr>
         <tr>
@@ -707,9 +708,7 @@
         <tr>
           <th></th>
           <th colspan="3" class="text-center">Inspection Damage</th>
-          <th
-            rowspan="2"
-          >Notes (Include date and whether repairs were completed; please be concise)</th>
+          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
         </tr>
         <tr>
           <th style="width: 106px; padding-left: 3px;">Area/Item</th>
@@ -722,277 +721,287 @@
         <tr>
           <td>Hall Closet</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hallCloset" value="yes" type="radio" name="hallCloset" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hallCloset" value="no" type="radio" name="hallCloset" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="hallCloset" value="n/a" type="radio" name="hallCloset" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="hallClosetNote" type="text" name="hallClosetNote" />
           </td>
         </tr>
         <tr>
           <td>Utility Room</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="utilityRoom" value="yes" type="radio" name="utilityRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="utilityRoom" value="no" type="radio" name="utilityRoom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="utilityRoom" value="n/a" type="radio" name="utilityRoom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="utilityRoomNote" type="text" name="utilityRoomNote" />
           </td>
         </tr>
         <tr>
           <td>Garage</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageInterior" value="yes" type="radio" name="garageInterior" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageInterior" value="no" type="radio" name="garageInterior" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="garageInterior" value="n/a" type="radio" name="garageInterior" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="garageInteriorNote" type="text" name="garageInteriorNote" />
           </td>
         </tr>
         <tr>
           <td>Attic</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="attic" value="yes" type="radio" name="attic" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="attic" value="no" type="radio" name="attic" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="attic" value="n/a" type="radio" name="attic" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="atticNote" type="text" name="atticNote" />
           </td>
         </tr>
         <tr>
           <td>Crawlspace</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="crawlspace" value="yes" type="radio" name="crawlspace" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="crawlspace" value="no" type="radio" name="crawlspace" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="crawlspace" value="n/a" type="radio" name="crawlspace" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="crawlspaceNote" type="text" name="crawlspaceNote" />
           </td>
         </tr>
         <tr>
           <td>Basement</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="basement" value="yes" type="radio" name="basement" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="basement" value="no" type="radio" name="basement" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="basement" value="n/a" type="radio" name="basement" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="basementNote" type="text" name="basementNote" />
           </td>
         </tr>
         <tr>
           <td>Master Bedrm</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBedroom" value="yes" type="radio" name="masterBedroom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBedroom" value="no" type="radio" name="masterBedroom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBedroom" value="n/a" type="radio" name="masterBedroom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="masterBedroomNote" type="text" name="masterBedroomNote" />
           </td>
         </tr>
         <tr>
           <td>MBR Closet</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input
+              v-model="masterBedroomCloset"
+              value="yes"
+              type="radio"
+              name="masterBedroomCloset"
+            />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBedroomCloset" value="no" type="radio" name="masterBedroomCloset" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input
+              v-model="masterBedroomCloset"
+              value="n/a"
+              type="radio"
+              name="masterBedroomCloset"
+            />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="masterBedroomClosetNote" type="text" name="masterBedroomClosetNote" />
           </td>
         </tr>
         <tr>
           <td>Bedroom 2</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2" value="yes" type="radio" name="bedroom2" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2" value="no" type="radio" name="bedroom2" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2" value="n/a" type="radio" name="bedroom2" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom2Note" type="text" name="bedroom2Note" />
           </td>
         </tr>
         <tr>
           <td>BR2 Closet</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2Closet" value="yes" type="radio" name="bedroom2Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2Closet" value="no" type="radio" name="bedroom2Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom2Closet" value="n/a" type="radio" name="bedroom2Closet" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom2ClosetNote" type="text" name="bedroom2ClosetNote" />
           </td>
         </tr>
         <tr>
           <td>Bedroom 3</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3" value="yes" type="radio" name="bedroom3" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3" value="no" type="radio" name="bedroom3" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3" value="n/a" type="radio" name="bedroom3" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom3Note" type="text" name="bedroom3Note" />
           </td>
         </tr>
         <tr>
           <td>BR3 Closet</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3Closet" value="yes" type="radio" name="bedroom3Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3Closet" value="no" type="radio" name="bedroom3Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom3Closet" value="n/a" type="radio" name="bedroom3Closet" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom3ClosetNote" type="text" name="bedroom3ClosetNote" />
           </td>
         </tr>
         <tr>
           <td>Bedroom 4</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4" value="yes" type="radio" name="bedroom4" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4" value="no" type="radio" name="bedroom4" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4" value="n/a" type="radio" name="bedroom4" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom4Note" type="text" name="bedroom4Note" />
           </td>
         </tr>
         <tr>
           <td>BR4 Closet</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4Closet" value="yes" type="radio" name="bedroom4Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4Closet" value="no" type="radio" name="bedroom4Closet" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bedroom4Closet" value="n/a" type="radio" name="bedroom4Closet" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bedroom4ClosetNote" type="text" name="bedroom4ClosetNote" />
           </td>
         </tr>
         <tr>
           <td>Master Bath</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBathroom" value="yes" type="radio" name="masterBathroom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBathroom" value="no" type="radio" name="masterBathroom" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="masterBathroom" value="n/a" type="radio" name="masterBathroom" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="masterBathroomNote" type="text" name="masterBathroomNote" />
           </td>
         </tr>
         <tr>
           <td>Bathroom 2</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom2" value="yes" type="radio" name="bathroom2" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom2" value="no" type="radio" name="bathroom2" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom2" value="yes" type="radio" name="bathroom2" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bathroom2Note" type="text" name="bathroom2Note" />
           </td>
         </tr>
         <tr>
           <td>Bathroom 3</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom3" value="yes" type="radio" name="bathroom3" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom3" value="no" type="radio" name="bathroom3" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="bathroom3" value="n/a" type="radio" name="bathroom3" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="bathroom3Note" type="text" name="bathroom3Note" />
           </td>
         </tr>
         <tr>
           <td>Contents</td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="contents" value="yes" type="radio" name="contents" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="contents" value="no" type="radio" name="contents" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="contents" value="n/a" type="radio" name="contents" />
           </td>
           <td style="height: 17px; padding: 0 6px;">
-            <input id type="text" name />
+            <input v-model="contentsNote" type="text" name="contentsNote" />
           </td>
         </tr>
         <tr>
           <td colspan="5" class="text-center">
             <div class="flex items-center justify-center">
-              <input id type="checkbox" name />
+              <input type="checkbox" name />
               <span style="margin-left: 8px; font-style: italic;">
                 Check here if the
                 inspection area/item list is
@@ -1003,8 +1012,6 @@
         </tr>
       </tbody>
     </table>
-
-    <div class="pagebreak"></div>
 
     <table class="mt-4 hic-table additional-entries">
       <thead>
@@ -1039,22 +1046,22 @@
             <input type="text" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td style="padding: 0 6px;" class="text-center">
-            <input id type="text" name />
+            <input v-model="gutterNote" type="text" name />
           </td>
         </tr>
         <tr>
@@ -1104,22 +1111,22 @@
             <input type="text" />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td class="text-center">
-            <input id type="radio" name />
+            <input v-model="gutters" value="yes" type="radio" name />
           </td>
           <td style="padding: 0 6px;" class="text-center">
-            <input id type="text" name />
+            <input v-model="gutterNote" type="text" name />
           </td>
         </tr>
       </tbody>
@@ -1141,11 +1148,29 @@
           <td style="height: 19px;">
             <div class="flex items-center">
               <span>Interior Inspected:</span>
-              <input id style="margin-left: 42px;" type="radio" name />
+              <input
+                v-model="interiorInspected"
+                value="yes"
+                style="margin-left: 42px;"
+                type="radio"
+                name="interiorInspected"
+              />
               <label style="margin-left: 3px;">Yes</label>
-              <input id style="margin-left: 27px;" type="radio" name />
+              <input
+                v-model="interiorInspected"
+                value="no"
+                style="margin-left: 27px;"
+                type="radio"
+                name="interiorInspected"
+              />
               <label style="margin-left: 3px;">No</label>
-              <input id style="margin-left: 24px;" type="radio" name />
+              <input
+                v-model="interiorInspected"
+                value="refused"
+                style="margin-left: 24px;"
+                type="radio"
+                name="interiorInspected"
+              />
               <label style="margin-left: 2px;">Refused</label>
             </div>
           </td>
@@ -1153,11 +1178,29 @@
             <div class="flex items-center">
               <span style="margin-left: 3px;">Exterior Inspected:</span>
               <div class="flex items-center">
-                <input id style="margin-left: 39px;" type="radio" name />
+                <input
+                  v-model="exteriorInspected"
+                  value="yes"
+                  style="margin-left: 39px;"
+                  type="radio"
+                  name="exteriorInspected"
+                />
                 <label style="margin-left: 2px;">Yes</label>
-                <input id style="margin-left: 32px;" type="radio" name />
+                <input
+                  v-model="exteriorInspected"
+                  value="no"
+                  style="margin-left: 32px;"
+                  type="radio"
+                  name="exteriorInspected"
+                />
                 <label style="margin-left: 3px;">No</label>
-                <input id style="margin-left: 28px;" type="radio" name />
+                <input
+                  v-model="exteriorInspected"
+                  value="refused"
+                  style="margin-left: 28px;"
+                  type="radio"
+                  name="exteriorInspected"
+                />
                 <label style="margin-left: 3px;">Refused</label>
               </div>
             </div>
@@ -1208,11 +1251,28 @@
             <div class="flex items-center justify-between">
               <span>A completed copy of this document was provided to the customer via:</span>
               <div class="flex items-center">
-                <input id type="radio" name />
+                <input
+                  v-model="customerCopyProvided"
+                  value="email"
+                  type="radio"
+                  name="customerCopyProvided"
+                />
                 <label style="margin-left: 2px;">email</label>
-                <input id style="margin-left: 12px;" type="radio" name />
+                <input
+                  v-model="customerCopyProvided"
+                  value="print"
+                  style="margin-left: 12px;"
+                  type="radio"
+                  name="customerCopyProvided"
+                />
                 <label style="margin-left: 3px;">print</label>
-                <input id style="margin-left: 10px;" type="radio" name />
+                <input
+                  v-model="customerCopyProvided"
+                  value="both"
+                  style="margin-left: 10px;"
+                  type="radio"
+                  name="customerCopyProvided"
+                />
                 <label style="margin-left: 3px;">both</label>
               </div>
             </div>
@@ -1244,13 +1304,106 @@ export default defineComponent({
       inspectionTypeSubsequent: '',
       insuredName: 'Victor Tolbert',
       claimNumber: '5456443XD',
-      lossDate: '',
-      inspectionDate: '',
-      lossLocation: '',
-      city: '',
-      state: '',
-      postalCode: '',
-      emailAddress: '',
+      lossDate: '11/4/2020',
+      inspectionDate: '01/15/2021',
+      lossLocation: '1547 Boulder Walk Drive',
+      city: 'Atlanta',
+      state: 'GA',
+      postalCode: '30316',
+      emailAddress: 'victor.tolbert@gmail.com',
+      insuredOnPremises: '',
+      othersPresent: '',
+      roof: '',
+      roofNote: '',
+      siding: 'yes',
+      sidingNote: 'This is a note for siding',
+      gutters: 'no',
+      guttersNote: '',
+      windows: '',
+      windowsNote: '',
+      screens: '',
+      screensNote: '',
+      doors: '',
+      doorsNote: '',
+      patio: '',
+      patioNote: '',
+      patioCovering: '',
+      patioCoveringNote: '',
+      garageExterior: '',
+      garageExteriorNote: '',
+      carport: '',
+      carportNote: '',
+      poolEnclosure: '',
+      poolEnclosureNote: '',
+      acUnit: '',
+      acUnitNote: '',
+      deck: '',
+      deckNote: '',
+      shed: '',
+      shedNote: '',
+      fence: '',
+      fenceNote: '',
+      mailbox: '',
+      mailboxNote: '',
+      livingRoom: '',
+      livingRoomNote: '',
+      familyRoom: '',
+      familyRoomNote: '',
+      diningRoom: '',
+      diningRoomNote: '',
+      kitchen: '',
+      kitchenNote: '',
+      breakfastArea: '',
+      breakfastAreaNote: '',
+      pantry: '',
+      pantryNote: '',
+      foyer: '',
+      foyerNote: '',
+      gameRoom: '',
+      gameRoomNote: '',
+      office: '',
+      officeNote: '',
+      hall: '',
+      hallNote: '',
+      hallCloset: '',
+      hallClosetNote: '',
+      utilityRoom: '',
+      utilityRoomNote: '',
+      garageInterior: '',
+      garageInteriorNote: '',
+      attic: '',
+      atticNote: '',
+      crawlspace: '',
+      crawlspaceNote: '',
+      basement: '',
+      basementNote: '',
+      masterBedroom: '',
+      masterBedroomNote: '',
+      masterBedroomCloset: '',
+      masterBedroomClosetNote: '',
+      bedroom2: '',
+      bedroom2Note: '',
+      bedroom2Closet: '',
+      bedroom2ClosetNote: '',
+      bedroom3: '',
+      bedroom3Note: '',
+      bedroom3Closet: '',
+      bedroom3ClosetNote: '',
+      bedroom4: '',
+      bedroom4Note: '',
+      bedroom4Closet: '',
+      bedroom4ClosetNote: '',
+      masterBathroom: '',
+      masterBathroomNote: '',
+      bathroom2: '',
+      bathroom2Note: '',
+      bathroom3: '',
+      bathroom3Note: '',
+      contents: '',
+      contentsNote: '',
+      interiorInspected: '',
+      exteriorInspected: '',
+      customerCopyProvided: '',
     })
 
     return {
@@ -1270,53 +1423,53 @@ $color-gray: #ccc;
 $color-black: #000;
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 @media print {
-    .pagebreak {
-        page-break-before: always;
-    } /* page-break-after works, as well */
+  .pagebreak {
+    page-break-before: always;
+  } /* page-break-after works, as well */
 }
 
 .hic-report {
-    width: 724px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
+  width: 724px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
 }
 
 .hic-table {
-    width: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border: 1px solid $color-black;
+
+  .table-header {
+    height: 17px;
+    background-color: #c6d9f1;
+  }
+
+  th,
+  td {
     padding: 0;
-    margin: 0;
+    vertical-align: middle;
+  }
+
+  table {
+    width: 100%;
     border-collapse: collapse;
-    border: 1px solid $color-black;
 
-    .table-header {
-        background-color: #c6d9f1;
-        height: 17px;
-    }
-
-    th,
     td {
-        padding: 0;
-        vertical-align: middle;
+      border-top: 1px solid $color-black;
+      border-left: 1px solid $color-black;
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-
-        td {
-            border-top: 1px solid $color-black;
-            border-left: 1px solid $color-black;
-        }
-    }
+  }
 }
 
 .hic-table.exterior,
@@ -1324,87 +1477,87 @@ html {
 .hic-table.additional-entries,
 .hic-table.signatures,
 .hic-table.copy-provided-to-customer {
-    th,
-    td {
-        border: 1px solid $color-black;
-    }
+  th,
+  td {
+    border: 1px solid $color-black;
+  }
 
-    tbody th:first-child,
-    tbody td:first-child {
-        padding-left: 3px;
-    }
+  tbody th:first-child,
+  tbody td:first-child {
+    padding-left: 3px;
+  }
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 0 0.25rem;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    font-family: monospace;
-    font-size: 0.8rem;
-    line-height: 1;
-    text-align: left;
-    background-color: $color-blue-light;
+  width: 100%;
+  padding: 0 0.25rem;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-align: left;
+  background-color: $color-blue-light;
 
-    border: none;
-    border-color: #6b7280;
-    border-width: 1px;
-    border-radius: 0;
+  border: none;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0;
 
-    appearance: none;
+  appearance: none;
 }
 
 input[type="text"]:focus {
-    background-color: $color-white;
-    outline: none;
+  background-color: $color-white;
+  outline: none;
 }
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 .flex {
-    display: flex;
+  display: flex;
 }
 .flex-col {
-    flex-direction: column;
+  flex-direction: column;
 }
 .items-start {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 .items-center {
-    align-items: center;
+  align-items: center;
 }
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 .justify-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .align-middle {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 .w-full {
-    width: 100%;
+  width: 100%;
 }
 .whitespace-nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 .borderless {
-    border: none;
+  border: none;
 }
 
 .font-normal {
-    font-weight: 400;
+  font-weight: 400;
 }
 .font-bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 .mt-4 {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 </style>
