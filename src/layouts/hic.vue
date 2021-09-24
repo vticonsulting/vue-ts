@@ -1,0 +1,1888 @@
+<template>
+  <form class="hic-report">
+    <table class="hic-table">
+      <thead>
+        <tr>
+          <th colspan="4" class="table-header">TEXAS HOME INSPECTION CHECKLIST</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">
+            <table>
+              <tr>
+                <td class="text-center" colspan="4" style="height: 20px; border-left: none;">
+                  <div class="flex items-center justify-center">
+                    <span>Type of inspection:</span>
+                    <input
+                      id="inspection-type-initial"
+                      type="radio"
+                      name="inspectionType"
+                      style="margin-left: 22px;"
+                    />
+                    <label for="inspection-type-initial" style="margin-left: 4px;">Initial</label>
+                    <input
+                      id="inspection-type-subsequent"
+                      type="radio"
+                      name="inspectionType"
+                      style="margin-left: 40px;"
+                    />
+                    <label for="inspection-type-subsequent" style="margin-left: 6px;">Subsequent</label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table>
+              <tr>
+                <td style="width: 292px; height: 34px; padding: 0 6px; border-left: none;">
+                  <label for="insured-name">Insured Name:</label>
+                  <input id="insured-name" type="text" name="insuredName" style="height: 17px;" />
+                </td>
+                <td style="width: 188px; padding: 0 6px;">
+                  <label for="claim-number">Claim #:</label>
+                  <input id="claim-number" type="text" name="claimNumber" style="height: 17px;" />
+                </td>
+                <td style="width: 102px; padding: 0 7px;">
+                  <label for="loss-date">Date of Loss:</label>
+                  <input id="loss-date" type="text" name="lossDate" style="height: 17px;" />
+                </td>
+                <td style="width: 142px; padding: 0 8px;">
+                  <label for="inspection-date">Date of Inspection:</label>
+                  <input
+                    id="inspection-date"
+                    type="text"
+                    name="inspectionDate"
+                    style="height: 17px;"
+                  />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table>
+              <tr>
+                <td style="width: 360px; height: 17px; padding-left: 6px; border-left: none;">
+                  <div class="flex items-center">
+                    <label class="whitespace-nowrap" for="loss-location">Loss Location:</label>
+                    <input id="loss-location" type="text" name="lossLocation" style="height: 17px;" />
+                  </div>
+                </td>
+                <td style="width: 144px; padding: 0 7px;">
+                  <div class="flex items-center">
+                    <label for="city">City:</label>
+                    <input id="city" type="text" name="city" style="height: 17px;" />
+                  </div>
+                </td>
+                <td style="width: 78px; padding: 0 7px;">
+                  <div class="flex items-center">
+                    <label for="state">State:</label>
+                    <input id="state" type="text" name="state" style="height: 17px;" />
+                  </div>
+                </td>
+                <td style="width: 142px; padding: 0 7px;">
+                  <div class="flex items-center">
+                    <label class="whitespace-nowrap" for="postal-code">ZIP Code:</label>
+                    <input id="postal-code" type="text" name="postalCode" style="height: 17px;" />
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table>
+              <tr>
+                <td style="width: 490px; height: 34px; padding-left: 6px; border-left: none;">
+                  <div class="flex items-start">
+                    <label class="whitespace-nowrap" for>Email Address:</label>
+                    <input
+                      id
+                      type="text"
+                      name="emailAddress"
+                      style="height: 31px; font-size: 18px;"
+                    />
+                  </div>
+                </td>
+                <td class="text-center" style="width: 234px;">
+                  <label style="display: block;">Insured on premises for inspection:</label>
+                  <input
+                    id="insured-on-premises-yes"
+                    type="radio"
+                    name="insuredOnPremises"
+                    value="yes"
+                  /> Yes
+                  <input
+                    id="insured-on-premises-no"
+                    type="radio"
+                    name="insuredOnPremises"
+                    value="no"
+                  /> No
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <table>
+              <tbody>
+                <tr>
+                  <td style="height: 33px; padding: 0 7px; border-left: none;">
+                    <label
+                      for="others-present"
+                    >Any others present? (If yes list name and role, e.g., “John Smith, Contractor”):</label>
+                    <input
+                      id="others-present"
+                      type="text"
+                      name="othersPresent"
+                      style="height: 17px;"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="height: 30px; padding-left: 4px; margin: 2px 0 0; line-height: 1.25;">
+      Please complete the interior and exterior checklists, indicating
+      <b>“Yes”</b> if the item/area has damage then use the “Notes” section to describe any pre-existing or non-related damage. Indicate
+      <b>“No”</b> if there is no damage to the item/area. Mark
+      <b>“N/A”</b> if the area does not exist.
+    </p>
+    <table class="hic-table exterior">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="6">EXTERIOR</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center" style="width: 116px; height: 20px;">Inspection Damage</th>
+          <th
+            rowspan="2"
+            style="padding-left: 3px;"
+          >Notes (Include date and whether repairs were completed; please be concise)</th>
+        </tr>
+        <tr>
+          <th style="width: 106px; height: 17px; padding-left: 3px;">Area/Item</th>
+          <th class="text-center" style="width: 38px;">Yes</th>
+          <th class="text-center" style="width: 38px;">No</th>
+          <th class="text-center" style="width: 38px;">N/A</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Roof</td>
+          <td class="text-center">
+            <input type="radio" name="roof" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="roof" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="roof" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="roofNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">
+            Siding (if “Yes”
+            <br />indicate elevation)
+          </td>
+          <td class="text-center">
+            <input type="radio" name="siding" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="siding" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="siding" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="sidingNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">
+            Gutters/
+            <br />Downspouts
+          </td>
+          <td class="text-center">
+            <input type="radio" name="gutters" value="yes" />
+          </td>
+          <td class="text-center align-middle">
+            <input type="radio" name="gutters" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="gutters" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="guttersNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Windows</td>
+          <td class="text-center">
+            <input type="radio" name="windows" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="windows" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="windows" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="windowsNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Screens</td>
+          <td class="text-center">
+            <input type="radio" name="screens" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="screens" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="screens" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="screensNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Doors</td>
+          <td class="text-center">
+            <input type="radio" name="doors" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="doors" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="doors" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="doorsNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Patio</td>
+          <td class="text-center">
+            <input type="radio" name="patio" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="patio" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="patio" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="patioNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Patio Covering</td>
+          <td class="text-center">
+            <input type="radio" name="patioCovering" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="patioCovering" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="patioCovering" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="patioCoveringNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Garage</td>
+          <td class="text-center">
+            <input type="radio" name="garageExterior" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="garageExterior" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="garageExterior" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="garageExterior" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Carport</td>
+          <td class="text-center">
+            <input type="radio" name="carport" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="carport" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="carport" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="carportNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Pool Enclosure</td>
+          <td class="text-center">
+            <input type="radio" name="poolEnclosure" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="poolEnclosure" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="poolEnclosure" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="poolEnclosureNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">A/C Unit</td>
+          <td class="text-center">
+            <input type="radio" name="acUnit" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="acUnit" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="acUnit" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="acUnitNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Deck</td>
+          <td class="text-center">
+            <input type="radio" name="deck" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="deck" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="deck" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="deckNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Shed/Outbuilding</td>
+          <td class="text-center">
+            <input type="radio" name="shed" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="shed" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="shed" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="shedNote" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Fence</td>
+          <td class="text-center">
+            <input type="radio" name="fence" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="fence" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="fence" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="fence" />
+          </td>
+        </tr>
+        <tr>
+          <td style="height: 17px; padding-left: 3px;">Mailbox</td>
+          <td class="text-center">
+            <input type="radio" name="mailbox" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="mailbox" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="mailbox" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="mailboxNote" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-center">
+            <div class="flex items-center justify-center">
+              <input type="checkbox" name />
+              <span
+                style="margin-left: 8px; font-style: italic;"
+              >Check here if the inspection area/item list is continued below in “Additional Entries” section.</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="mt-4 hic-table interior">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="5">INTERIOR</th>
+        </tr>
+        <tr>
+          <th colspan="5" class="text-left">
+            <section class="flex items-start w-full italic">
+              <div
+                class="font-normal"
+                style="width: 336px; padding-top: 4px; padding-right: 10px; padding-left: 38px; line-height: 1.5;"
+              >The customer/representative refused inspection of all or part of the interior property at this time, confirming that there is no interior damage due to the reported loss except as specified below (Sign below, page 3).</div>
+              <div
+                class="font-normal"
+                style="width: 386px; height: 82px; padding-top: 4px; padding-right: 14px; padding-left: 42px; line-height: 1.5; border-left: 1px solid rgb(0, 0, 0);"
+              >The customer/representative refused inspection of all or part of the interior property at this time, confirming that there is no new or additional interior damage due to the reported loss since the last inspection except as specified below (Sign below, page 3).</div>
+            </section>
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center" style="height: 20px;">Inspection Damage</th>
+          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
+        </tr>
+        <tr>
+          <th style="width: 106px; height: 17px; padding-left: 3px;">Area/Item</th>
+          <th class="text-center">Yes</th>
+          <th class="text-center">No</th>
+          <th class="text-center">N/A</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Living Room</td>
+          <td class="text-center">
+            <input type="radio" name="livingRoom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="livingRoom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="livingRoom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="livingRoomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Family Room</td>
+          <td class="text-center">
+            <input type="radio" name="familyRoom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="familyRoom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="familyRoom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="familyRoomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Dining Room</td>
+          <td class="text-center">
+            <input type="radio" name="diningRoom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="diningRoom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="diningRoom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="diningRoomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Kitchen</td>
+          <td class="text-center">
+            <input type="radio" name="kitchen" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="kitchen" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="kitchen" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="kitchenNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Breakfast Area</td>
+          <td class="text-center">
+            <input type="radio" name="breakfastArea" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="breakfastArea" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="breakfastArea" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="breakfastAreaNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Pantry</td>
+          <td class="text-center">
+            <input type="radio" name="pantry" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="pantry" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="pantry" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="pantryNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Foyer</td>
+          <td class="text-center">
+            <input type="radio" name="foyer" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="foyer" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="foyer" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="foyerNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Game Room</td>
+          <td class="text-center">
+            <input type="radio" name="gameRoom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="gameRoom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="gameRoom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="gameRoomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Office/Study</td>
+          <td class="text-center">
+            <input type="radio" name="office" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="office" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="office" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="officeNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Hall</td>
+          <td class="text-center">
+            <input type="radio" name="hall" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="hall" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="hall" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="hallNote" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5" style="height: 20px; background-color: rgb(241, 241, 241);">
+            <div class="flex items-center justify-between w-full">
+              <span>Insured's/Rep's Initials:</span>
+              <span>Claim #:</span>
+              <span>Page 1 of 3</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="mt-4 hic-table interior">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="5">INTERIOR (CONTINUED)</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center">Inspection Damage</th>
+          <th rowspan="2">Notes (Include date and whether repairs were completed; please be concise)</th>
+        </tr>
+        <tr>
+          <th style="width: 106px; padding-left: 3px;">Area/Item</th>
+          <th class="text-center">Yes</th>
+          <th class="text-center">No</th>
+          <th class="text-center">N/A</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hall Closet</td>
+          <td class="text-center">
+            <input type="radio" name="hallCloset" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="hallCloset" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="hallCloset" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="hallClosetNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Utility Room</td>
+          <td class="text-center">
+            <input type="radio" name="utilityRoom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="utilityRoom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="utilityRoom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="utilityRoomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Garage</td>
+          <td class="text-center">
+            <input type="radio" name="garageInterior" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="garageInterior" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="garageInterior" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="garageInteriorNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Attic</td>
+          <td class="text-center">
+            <input type="radio" name="attic" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="attic" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="attic" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="atticNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Crawlspace</td>
+          <td class="text-center">
+            <input type="radio" name="crawlspace" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="crawlspace" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="crawlspace" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="crawlspaceNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Basement</td>
+          <td class="text-center">
+            <input type="radio" name="basement" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="basement" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="basement" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="basementNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Master Bedrm</td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="masterBedroomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>MBR Closet</td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroomCloset" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroomCloset" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBedroomCloset" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="masterBedroomClosetNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bedroom 2</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom2Note" />
+          </td>
+        </tr>
+        <tr>
+          <td>BR2 Closet</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2Closet" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2Closet" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom2Closet" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom2ClosetNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bedroom 3</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom3Note" />
+          </td>
+        </tr>
+        <tr>
+          <td>BR3 Closet</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3Closet" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3Closet" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom3Closet" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom3ClosetNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bedroom 4</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom4Note" />
+          </td>
+        </tr>
+        <tr>
+          <td>BR4 Closet</td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4Closet" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4Closet" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bedroom4Closet" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bedroom4ClosetNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Master Bath</td>
+          <td class="text-center">
+            <input type="radio" name="masterBathroom" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBathroom" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="masterBathroom" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="masterBathroomNote" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bathroom 2</td>
+          <td class="text-center">
+            <input type="radio" name="bathroom2" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bathroom2" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bathroom2" value="yes" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bathroom2Note" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bathroom 3</td>
+          <td class="text-center">
+            <input type="radio" name="bathroom3" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bathroom3" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="bathroom3" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="bathroom3Note" />
+          </td>
+        </tr>
+        <tr>
+          <td>Contents</td>
+          <td class="text-center">
+            <input type="radio" name="contents" value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="contents" value="no" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name="contents" value="n/a" />
+          </td>
+          <td style="height: 17px; padding: 0 6px;">
+            <input type="text" name="contentsNote" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-center">
+            <div class="flex items-center justify-center">
+              <input type="checkbox" name />
+              <span
+                style="margin-left: 8px; font-style: italic;"
+              >Check here if the inspection area/item list is continued below in “Additional Entries” section.</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="mt-4 hic-table additional-entries">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="7">ADDITIONAL ENTRIES</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center" style="width: 99px;">
+            Inspection
+            <br />Damage
+          </th>
+          <th colspan="2" class="text-center" style="width: 70px;">Location</th>
+          <th
+            rowspan="2"
+            class="text-center"
+            style="padding-left: 3px;"
+          >Notes (Include date and whether repairs were completed; please be concise)</th>
+        </tr>
+        <tr>
+          <th style="width: 106px; padding-left: 3px;">Area/Item</th>
+          <th class="text-center">Yes</th>
+          <th class="text-center">No</th>
+          <th class="text-center">N/A</th>
+          <th class="text-center">INT</th>
+          <th class="text-center">EXT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" style="height: 20px; background-color: rgb(241, 241, 241);">
+            <div class="flex items-center justify-between w-full">
+              <span>Insured's/Rep's Initials:</span>
+              <span>Claim #:</span>
+              <span>Page 2 of 3</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagebreak"></div>
+    <table class="mt-4 hic-table additional-entries">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="7">ADDITIONAL ENTRIES (CONTINUED)</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="3" class="text-center" style="width: 99px;">
+            Inspection
+            <br />Damage
+          </th>
+          <th colspan="2" class="text-center" style="width: 70px;">Location</th>
+          <th
+            rowspan="2"
+            class="text-center"
+            style="padding-left: 3px;"
+          >Notes (Include date and whether repairs were completed; please be concise)</th>
+        </tr>
+        <tr>
+          <th style="width: 106px; padding-left: 3px;">Area/Item</th>
+          <th class="text-center">Yes</th>
+          <th class="text-center">No</th>
+          <th class="text-center">N/A</th>
+          <th class="text-center">INT</th>
+          <th class="text-center">EXT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center">
+            <input type="radio" name value="yes" />
+          </td>
+          <td class="text-center" style="padding: 0 6px;">
+            <input type="text" name />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="mt-4 hic-table signatures">
+      <thead>
+        <tr>
+          <th class="table-header" colspan="3">SIGNATURES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            colspan="3"
+          >An indication on this form that an item is or is not damaged, is not an indication or representation as to whether there is insurance coverage for that damage. All claims are subject to the terms of the insurance policy. All coverage determinations will be made by your Allstate Adjuster.</td>
+        </tr>
+        <tr>
+          <td style="height: 19px;">
+            <div class="flex items-center">
+              <span>Interior Inspected:</span>
+              <input type="radio" name="interiorInspected" value="yes" style="margin-left: 42px;" />
+              <label style="margin-left: 3px;">Yes</label>
+              <input type="radio" name="interiorInspected" value="no" style="margin-left: 27px;" />
+              <label style="margin-left: 3px;">No</label>
+              <input
+                type="radio"
+                name="interiorInspected"
+                value="refused"
+                style="margin-left: 24px;"
+              />
+              <label style="margin-left: 2px;">Refused</label>
+            </div>
+          </td>
+          <td colspan="2" style="width: 367px; padding-left: 3px;">
+            <div class="flex items-center">
+              <span style="margin-left: 3px;">Exterior Inspected:</span>
+              <div class="flex items-center">
+                <input type="radio" name="exteriorInspected" value="yes" style="margin-left: 39px;" />
+                <label style="margin-left: 2px;">Yes</label>
+                <input type="radio" name="exteriorInspected" value="no" style="margin-left: 32px;" />
+                <label style="margin-left: 3px;">No</label>
+                <input
+                  type="radio"
+                  name="exteriorInspected"
+                  value="refused"
+                  style="margin-left: 28px;"
+                />
+                <label style="margin-left: 3px;">Refused</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Insured/Representative Name (Print):</td>
+          <td rowspan="2" class="align-top" style="width: 145px; padding: 0 6px;">
+            <div class="flex flex-col">
+              <label>Date:</label>
+              <input type="text" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Insured/Representative Signature:</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Printed Name of Person Completing
+            <br />the Form for the Insurer:
+          </td>
+          <td rowspan="2" class="align-top" style="width: 145px; padding: 0 6px;">
+            <div class="flex flex-col">
+              <label>Date:</label>
+              <input type="text" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Signature of Person Completing
+            <br />the Form for the Insurer:
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="mt-4 hic-table copy-provided-to-customer">
+      <thead>
+        <tr>
+          <th class="table-header">COPY PROVIDED TO CUSTOMER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="height: 19px; padding-right: 54px;">
+            <div class="flex items-center justify-between">
+              <span>A completed copy of this document was provided to the customer via:</span>
+              <div class="flex items-center">
+                <input type="radio" name="customerCopyProvided" value="email" />
+                <label style="margin-left: 2px;">email</label>
+                <input
+                  type="radio"
+                  name="customerCopyProvided"
+                  value="print"
+                  style="margin-left: 12px;"
+                />
+                <label style="margin-left: 3px;">print</label>
+                <input
+                  type="radio"
+                  name="customerCopyProvided"
+                  value="both"
+                  style="margin-left: 10px;"
+                />
+                <label style="margin-left: 3px;">both</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td
+            class="font-bold"
+            style="height: 19px; padding-right: 36px; background-color: rgb(241, 241, 241);"
+          >
+            <div class="flex items-center justify-between w-full">
+              <span>Claim #:</span>
+              <span>Page 3 of 3</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</template>

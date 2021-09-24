@@ -251,23 +251,13 @@ export default defineComponent({
             <BaseLogo :name="GStore.affiliate.subdomain" class="text-primary-500" />
           </RouterLink>
 
-          <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-            <BaseDropdownMenu
-              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-              :options="[
-                { id: 6, name: 'reports', label: t('reports') },
-              ]"
-            >
-              <span class="whitespace-nowrap">{{ t('all_affiliates') }}</span>
-            </BaseDropdownMenu>
-          </div>
+          <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8"></div>
         </div>
 
         <div class="hidden space-x-1 sm:ml-6 sm:flex sm:items-center">
           <BaseLanguageToggle />
           <AppMessagesButton />
           <AppAnnouncementsButton />
-          <BaseProfileDropdownButton :user="GStore.authUser" />
         </div>
 
         <div class="flex items-center -mr-2 sm:hidden">

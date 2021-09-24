@@ -3,12 +3,10 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useToast } from 'vue-toastification'
-import FileUploadForm from '~/components/FileUploadForm.vue'
-import InterestItem from '~/components/interest/Item.vue'
 // import { PersonItem } from '~/types'
 
 export default defineComponent({
-  components: { FileUploadForm, InterestItem },
+  inject: ['GStore'],
   props: {
     person: {
       // type: Object as PropType<PersonItem>,
@@ -16,14 +14,13 @@ export default defineComponent({
       required: true,
     },
   },
-  inject: ['GStore'],
   setup() {
     const { t } = useI18n()
     const toast = useToast()
     return {
       assetsURL: process.env.MIX_ASSETS_URL,
       t,
-      toast
+      toast,
     }
   },
   methods: {
@@ -38,19 +35,18 @@ export default defineComponent({
         this.GStore.flashMessage = ''
       }, 3000)
       this.$router.push({
-        name: 'PersonHome'
+        name: 'PersonHome',
       })
-    }
-  }
+    },
+  },
 })
 </script>
-
 
 <template>
   <main class="flex-1 lg:col-span-9">
     <SectionWrapper>
       <SectionHeader>{{ t('contact_info') }}</SectionHeader>
-      <form @submit.prevent="handleSubmit" method="POST">
+      <form method="POST" @submit.prevent="handleSubmit">
         <div class="flex flex-col lg:flex-row">
           <div class="flex-grow space-y-6">
             <!-- First / Last Names -->
@@ -59,8 +55,8 @@ export default defineComponent({
               <div class="col-span-4 sm:col-span-2">
                 <OField label="First Name">
                   <input
-                    v-model="person.name_first"
                     id="name_first"
+                    v-model="person.name_first"
                     type="text"
                     name="name_first"
                     placeholder="Enter your first name"
@@ -74,8 +70,8 @@ export default defineComponent({
               <div class="col-span-4 sm:col-span-2">
                 <OField label="Last Name">
                   <input
-                    v-model="person.name_last"
                     id="name_last"
+                    v-model="person.name_last"
                     type="text"
                     name="name_last"
                     placeholder="Enter your last name"
@@ -92,8 +88,8 @@ export default defineComponent({
               <div class="col-span-4 sm:col-span-2">
                 <OField class="mt-4" label="Primary Email">
                   <input
-                    v-model="person.people_email_primary"
                     id="primary-email"
+                    v-model="person.people_email_primary"
                     type="email"
                     name="primary_email"
                     placeholder="Enter your email"
@@ -106,9 +102,9 @@ export default defineComponent({
               <div class="col-span-4 sm:col-span-2">
                 <OField class="mt-4" label="Mobile Phone">
                   <input
+                    id="mobile-phone"
                     v-model="person.people_phone_mobile"
                     type="tel"
-                    id="mobile-phone"
                     name="mobile_phone"
                     placeholder="Enter your phone number"
                     autocomplete="off"
@@ -182,8 +178,8 @@ export default defineComponent({
                 <span>Change</span>
                 <span class="sr-only">user photo</span>
                 <input
-                  type="file"
                   id="user-photo"
+                  type="file"
                   name="user-photo"
                   class="absolute inset-0 w-full h-full border-gray-300 rounded-md opacity-0 cursor-pointer"
                 />
@@ -206,8 +202,8 @@ export default defineComponent({
           <div class="col-span-4 sm:col-span-2">
             <OField label="Home Church">
               <input
-                v-model="person.home_church"
                 id="home-church"
+                v-model="person.home_church"
                 type="text"
                 name="home_church"
                 placeholder="Enter your home church"
@@ -249,9 +245,9 @@ export default defineComponent({
         <!-- Secondary Email -->
         <OField class="mt-4" label="Secondary Email">
           <input
+            id="secondary-email"
             v-model="person.people_email_secondary"
             type="email"
-            id="secondary-email"
             name="secondary_email"
             placeholder="Enter your email"
             autocomplete="off"
@@ -262,9 +258,9 @@ export default defineComponent({
         <!-- Home Phone -->
         <OField class="mt-4" label="Home Phone">
           <input
+            id="home-phone"
             v-model="person.people_phone_home"
             type="tel"
-            id="home-phone"
             name="home_phone"
             placeholder="Home phone number (optional)"
             autocomplete="off"
@@ -275,9 +271,9 @@ export default defineComponent({
         <!-- Work Phone -->
         <OField class="mt-4" label="Work Phone">
           <input
+            id="work-phone"
             v-model="person.people_phone_office"
             type="tel"
-            id="work-phone"
             name="work_phone"
             placeholder="Work phone number (optional)"
             autocomplete="off"
@@ -288,8 +284,8 @@ export default defineComponent({
         <!-- Occupation -->
         <OField class="mt-4" label="Occupation">
           <input
-            type="text"
             id="occupation"
+            type="text"
             name="occupation"
             placeholder="Occupation"
             autocomplete="off"
@@ -300,8 +296,8 @@ export default defineComponent({
         <!-- Address -->
         <OField class="mt-4" label="Address">
           <input
-            v-model="person.address_street_1"
             id="address"
+            v-model="person.address_street_1"
             type="text"
             name="address"
             placeholder="Address"
@@ -313,8 +309,8 @@ export default defineComponent({
         <!-- Address 2 -->
         <OField class="mt-4" label="Apt or Unit #">
           <input
-            v-model="person.address_street_2"
             id="apt"
+            v-model="person.address_street_2"
             type="text"
             name="apt"
             placeholder="Suite, apartment number, or unit"
@@ -326,10 +322,10 @@ export default defineComponent({
         <!-- City -->
         <OField class="mt-4" label="City">
           <input
+            id="city"
             v-model="person.address_street_2"
             type="text"
             class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-            id="city"
             name="city"
             placeholder="City"
             autocomplete="off"
@@ -339,8 +335,8 @@ export default defineComponent({
         <!-- State -->
         <OField class="mt-4" label="State">
           <input
-            v-model="person.address_state"
             id="state"
+            v-model="person.address_state"
             type="text"
             class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
             name="state"
@@ -354,10 +350,10 @@ export default defineComponent({
           <div class="col-span-4 sm:col-span-2">
             <OField label="Country / Region">
               <input
+                id="country"
                 v-model="person.address_country"
                 type="text"
                 class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                id="country"
                 name="country"
                 placeholder="Country"
                 autocomplete="off"
@@ -369,10 +365,10 @@ export default defineComponent({
           <div class="col-span-4 sm:col-span-2">
             <OField label="ZIP / Postal">
               <input
+                id="zip"
                 v-model="person.address_zip"
                 type="text"
                 class="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-                id="zip"
                 name="zip"
                 placeholder="Zip code"
                 autocomplete="off"
@@ -431,8 +427,8 @@ export default defineComponent({
         <fieldset class="mt-8">
           <OField class="mt-4" label="Church">
             <select
-              placeholder="Role"
               id="church"
+              placeholder="Role"
               name="church"
               autocomplete="off"
               class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:max-w-xs sm:text-sm"
@@ -444,8 +440,8 @@ export default defineComponent({
           <!-- Role -->
           <OField class="mt-4" label="Role">
             <select
-              placeholder="Role"
               id="role"
+              placeholder="Role"
               name="role"
               autocomplete="off"
               class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:max-w-xs sm:text-sm"

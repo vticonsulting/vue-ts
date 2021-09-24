@@ -1,0 +1,2 @@
+import{_ as o}from"./HeaderComponent.js";import{_ as s}from"./FooterComponent.js";/* empty css                *//* empty css     */import{_ as a}from"./main.js";import{n as r,i as n,q as i,j as t,K as m,o as e}from"./vendor.js";import"./BaseIconSolid.js";import"./index9.js";const p={class:"app-main"};var d=a({},[["render",function(a,d,c,j,l,f){const u=o,v=r("router-view"),_=s;return e(),n("div",{class:m(["app-layout",a.collapsed?"collapsed":""])},[i(u),t("main",p,[i(v)]),i(_)],2)}]]);export{d as default};
+//# sourceMappingURL=docs.js.map

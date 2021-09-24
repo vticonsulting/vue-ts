@@ -1,10 +1,8 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
 import { useI18n } from 'vue-i18n'
-import DemoHeader from '~/components/demo/Header.vue'
 
 export default defineComponent({
-  components: { DemoHeader },
   inject: ['GStore'],
   setup() {
     const { t } = useI18n()
@@ -27,7 +25,7 @@ export default defineComponent({
         { name: 'person-volunteer-eligibility', label: t('volunteer_eligibility'), icon: 'check-circle' },
         // { name: 'person-church-volunteer-requests', label: t('church_volunteer_requests'), icon: 'user-circle' },
         // { name: 'person-volunteer-requests', label: t('my_volunteer_requests'), icon: 'user-circle' },
-      ]
+      ],
     })
     return { t, ...toRefs(state) }
   },
@@ -36,7 +34,7 @@ export default defineComponent({
 
 <template>
   <div class="flex-1 bg-gray-100">
-    <div class v-if="GStore.person">
+    <div v-if="GStore.person" class>
       <!-- <h1>{{ GStore.person.firstName }}</h1> -->
       <DemoHeader />
       <main class="relative -mt-32">
@@ -46,20 +44,20 @@ export default defineComponent({
               <aside class="py-6 lg:col-span-3">
                 <nav class="space-y-1">
                   <RouterLink
-                    :key="page.name"
                     v-for="page in pages"
+                    :key="page.name"
+                    v-slot="{ href, isExactActive, navigate }"
                     :to="{ name: page.name }"
                     custom
-                    v-slot="{ href, isExactActive, navigate }"
                   >
                     <a
                       :href="href"
-                      @click="navigate"
                       :class="[
                         isExactActive && 'bg-primary-50 border-primary-500 text-primary-700 hover:bg-primary-50 hover:text-primary-700',
                         !isExactActive && 'border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900',
                       ]"
                       class="flex items-center px-3 py-2 text-sm font-medium border-l-4 group"
+                      @click="navigate"
                     >
                       <BaseIconOutlined
                         :name="page.icon"

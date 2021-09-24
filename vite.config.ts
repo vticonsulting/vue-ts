@@ -168,19 +168,19 @@ export default defineConfig({
     ],
   },
 
-  // build: {
-  //   sourcemap: true,
-  //   outDir: "./wwwroot",
-  //   rollupOptions: {
-  //     input: {
-  //       main: resolve(__dirname, "index.html"),
-  //       // examples: resolve(__dirname, "examples/index.html"),
-  //     },
-  //     output: {
-  //       entryFileNames: "[name].js",
-  //       chunkFileNames: "[name].js",
-  //       assetFileNames: "[name].[ext]",
-  //     },
-  //   },
-  // },
+  build: {
+    sourcemap: true,
+    outDir: './wwwroot',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        // examples: resolve(__dirname, "examples/index.html"),
+      },
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+      },
+    },
+  },
 })
