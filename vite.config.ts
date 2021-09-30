@@ -167,7 +167,11 @@ export default defineConfig({
       'vue-demi',
     ],
   },
-
+  // root: './',
+  // base: './',
+  // build: {
+  //   sourcemap: 'inline',
+  // },
   build: {
     sourcemap: true,
     outDir: './wwwroot',
