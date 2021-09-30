@@ -1,3 +1,13 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {
+    return {}
+  },
+})
+</script>
+
 <template>
   <div>
     <nav aria-label="breadcrumb">
@@ -103,16 +113,3 @@
     <base-button>My Button</base-button>\
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  setup() {
-    return {}
-  },
-})
-</script>
-
-<style scoped>
-</style>

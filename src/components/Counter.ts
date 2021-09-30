@@ -5,9 +5,9 @@ const Counter = defineComponent({
   props: {
     count: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 
 export default Counter

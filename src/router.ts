@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
 
+import { globalState } from './store'
+import { scrollWaiter } from './scrollWaiter'
+
 const component = () => {
   console.log('fetching component')
   return import('./views/Generic.vue')
 }
-
-import { globalState } from './store'
-import { scrollWaiter } from './scrollWaiter'
 
 export const routerHistory = createWebHistory()
 export const router = createRouter({
@@ -25,7 +25,8 @@ export const router = createRouter({
     await scrollWaiter.wait()
     if (savedPosition) {
       return savedPosition
-    } else {
+    }
+    else {
       // TODO: check if parent in common that works with alias
       if (to.matched.every((record, i) => from.matched[i] !== record))
         return { left: 0, top: 0 }
@@ -43,7 +44,8 @@ router.beforeEach((to, from, next) => {
   if (/.\/$/.test(to.path)) {
     to.meta.redirectCode = 301
     next(to.path.replace(/\/$/, ''))
-  } else next()
+  }
+  else { next() }
   // next()
 })
 
@@ -53,7 +55,7 @@ router.beforeEach(async (to, from, next) => {
 
   const time = Number(to.query.delay)
   if (time > 0) {
-    console.log('⏳ waiting ' + time + 'ms')
+    console.log(`⏳ waiting ${time}ms`)
     to.meta.waitedFor = time
     await delay(time)
   }
@@ -107,7 +109,7 @@ export function go(delta: number) {
       clearHooks()
       resolve(failure)
     })
-    const removeOnError = router.onError(err => {
+    const removeOnError = router.onError((err) => {
       clearHooks()
       reject(err)
     })
@@ -127,8 +129,8 @@ router.beforeEach((to, from, next) => {
 
 const dirLog = {
   '': '？',
-  back: '⏪',
-  forward: '⏩',
+  'back': '⏪',
+  'forward': '⏩',
 }
 routerHistory.listen((to, from, info) => {
   console.log(`${dirLog[info.direction]} as a ${info.type}`)
