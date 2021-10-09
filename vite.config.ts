@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
@@ -16,18 +17,25 @@ import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'prose prose-sm mr-auto text-left max-w-none'
+const markdownWrapperClasses = 'prose prose-sm m-auto text-left max-w-none'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
       '~/': `${resolve(__dirname, 'src')}/`,
+      '@/': new URL('./src/', import.meta.url).pathname
     },
   },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
+      script: {
+        refSugar: true,
+      },
     }),
+
+    VueJsx(),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
@@ -77,7 +85,9 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/unplugin-icons
-    Icons(),
+    Icons({
+      autoInstall: true,
+    }),
 
     // https://github.com/antfu/vite-plugin-windicss
     WindiCSS({

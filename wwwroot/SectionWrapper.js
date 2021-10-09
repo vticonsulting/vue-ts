@@ -1,2 +1,2 @@
-import{_ as a}from"./main.js";import{o as e,i as o,z as r,K as s}from"./vendor.js";var p=a({name:"SectionWrapper",props:{padded:{type:Boolean,default:!0}}},[["render",function(a,p,t,d,n,i){return e(),o("section",{class:s({"lg:p-8":t.padded})},[r(a.$slots,"default")],2)}]]);export{p as _};
+import{_ as a}from"./main.js";import{o as s,i as n,y as r,T as t}from"./vendor.js";const p={name:"SectionWrapper",props:{padded:{type:Boolean,default:!0}}};function c(e,d,o,l,_,i){return s(),n("section",{class:t({"lg:p-8":o.padded})},[r(e.$slots,"default")],2)}var u=a(p,[["render",c]]);export{u as _};
 //# sourceMappingURL=SectionWrapper.js.map

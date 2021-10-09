@@ -2,7 +2,7 @@
 import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Design Tokens',
+  title: 'VTi Consulting',
   meta: [
     { name: 'description', content: 'Opinionated Vite Starter Template' },
   ],

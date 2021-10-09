@@ -76,22 +76,23 @@ export default defineComponent({
     @item-click="onItemClick"
   >
     <template #header>
-      <router-link to="/" class="flex py-2 pl-2 text-brand-500 sidebar-header items-center">
-        <BaseLogo name="hancock-h" />
+      <router-link to="/" class="flex items-center py-2 pl-2 text-brand-500 sidebar-header">
+        <BaseLogo name="vti" />
 
-        <span v-if="!collapsed" class="font-bold leading-none ml-1" style="white-space: nowrap;">
-          Design
-          <br />Tokens
-        </span>
+        <span
+          v-if="!collapsed"
+          class="ml-1 font-bold leading-none"
+          style="white-space: nowrap;"
+        >View Components</span>
       </router-link>
 
-      <div class="mt-3 p-2 sidebar-profile-container">
-        <router-link to="/user" class="flex text-white no-underline items-center hover:text-white">
+      <div class="p-2 mt-3 sidebar-profile-container">
+        <router-link to="/user" class="flex items-center text-white no-underline hover:text-white">
           <BaseAvatar class="rounded-full h-11 w-11" />
 
-          <div v-if="!collapsed" class="text-xs ml-2">
+          <div v-if="!collapsed" class="ml-2 text-xs">
             <span class="font-bold uppercase">Victor Tolbert</span>
-            <div>vtolbert@hancockclaims.com</div>
+            <div>victor@example.com</div>
           </div>
         </router-link>
       </div>
@@ -112,10 +113,9 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
-@import "../../styles/hancock/variables";
+@import "./variables";
 
 $base-bg: $color-primary-800;
 $primary-color: $color-secondary-500;
-
 @import "../../../node_modules/vue-sidebar-menu/src/scss/vue-sidebar-menu.scss";
 </style>

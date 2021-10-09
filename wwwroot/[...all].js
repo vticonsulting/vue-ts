@@ -1,2 +1,2 @@
-import{g as t,h as o,o as s,i as a,t as n,k as r}from"./vendor.js";var e={};const u=t({setup(t){const{t:e}=o();return(t,o)=>(s(),a("div",null,n(r(e)("not-found")),1))}});"function"==typeof e&&e(u);export{u as default};
+import{g as t,h as e,o as s,i as a,t as r,k as c}from"./vendor.js";var n={};const f=t({setup(i){const{t:o}=e();return(p,u)=>(s(),a("div",null,r(c(o)("not-found")),1))}});typeof n=="function"&&n(f);export{f as default};
 //# sourceMappingURL=[...all].js.map

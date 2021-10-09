@@ -1,2 +1,2 @@
-import{_ as r}from"./main.js";import{n as o,x as a,o as e}from"./vendor.js";var n=r({},[["render",function(r,n){const s=o("router-view");return e(),a(s)}]]);export{n as default};
+import{_ as o}from"./main.js";import{n as r,s as n,o as t}from"./vendor.js";const s={};function c(a,_){const e=r("router-view");return t(),n(e)}var p=o(s,[["render",c]]);export{p as default};
 //# sourceMappingURL=plain.js.map

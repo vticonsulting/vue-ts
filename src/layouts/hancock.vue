@@ -27,7 +27,6 @@ import 'virtual:windi-utilities.css'
 
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
-import AppNavbar from '~/components/Hancock/AppNavbar.vue'
 
 export default {
   name: 'VueLayoutComponent',
@@ -61,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/hancock/variables";
+@import "../components/Hancock/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // @import "../styles/hancock/components/sidebar-menu";
 

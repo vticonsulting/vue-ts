@@ -1,2 +1,2 @@
-import{s as e,o,i as s,j as t}from"./vendor.js";var a={};const r={class:"prose prose-sm mr-auto text-left max-w-none"},n=[t("h1",null,"Tokens",-1),t("h2",null,"Colors",-1)],l={setup(t,{expose:a}){a({frontmatter:{meta:[]}});return e({meta:[]}),(e,t)=>(o(),s("div",r,n))}};"function"==typeof a&&a(l);export{l as default};
+import{q as s,o as a,i as n,j as e}from"./vendor.js";var t={};const r={class:"prose prose-sm mr-auto text-left max-w-none"},c=e("h1",null,"Tokens",-1),_=e("h2",null,"Colors",-1),l=[c,_],d={setup(m,{expose:o}){return o({frontmatter:{meta:[]}}),s({meta:[]}),(h,p)=>(a(),n("div",r,l))}};typeof t=="function"&&t(d);export{d as default};
 //# sourceMappingURL=tokens.js.map

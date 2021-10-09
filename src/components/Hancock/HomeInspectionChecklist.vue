@@ -1294,7 +1294,7 @@
   </form>
 </template>
 
-<script lang="ts">
+<script>
 import { reactive, defineComponent, toRefs } from 'vue'
 
 export default defineComponent({
@@ -1415,7 +1415,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "../../styles/hancock/variables";
+@import "./variables";
 
 $color-blue: rgb(191, 219, 254);
 $color-blue-light: #f1f4ff;

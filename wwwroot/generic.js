@@ -1,2 +1,2 @@
-import{_ as e}from"./main.js";import{g as r,o as n,i as a,j as o,t as s}from"./vendor.js";const t=r({name:"Generic"}),i=o("h1",null,"Generic view",-1);var l=e(t,[["render",function(e,r,t,l,u,m){return n(),a("section",null,[i,o("pre",null,s(e.$route.fullPath),1)])}]]);export{l as default};
+import{_ as o}from"./main.js";import{g as r,o as t,i as s,j as e,t as a}from"./vendor.js";const c=r({name:"Generic"}),i=e("h1",null,"Generic view",-1);function l(n,p,_,f,m,u){return t(),s("section",null,[i,e("pre",null,a(n.$route.fullPath),1)])}var h=o(c,[["render",l]]);export{h as default};
 //# sourceMappingURL=generic.js.map
