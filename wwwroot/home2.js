@@ -1,2 +1,0 @@
-import{_ as r}from"./Footer.js";/* empty css                *//* empty css     *//* empty css               */import{_ as n}from"./main.js";import{n as s,i,p as o,o as a}from"./vendor.js";import"./index2.js";const c={},m={class:"px-4 py-10 text-center text-gray-700 dark:text-gray-200"};function p(_,d,f,x,j,l){const t=s("router-view"),e=r;return a(),i("main",m,[o(t),o(e)])}var g=n(c,[["render",p]]);export{g as default};
-//# sourceMappingURL=home2.js.map

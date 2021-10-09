@@ -1,2 +1,0 @@
-import{_ as a}from"./HeaderComponent.js";import{_ as r}from"./FooterComponent.js";/* empty css                *//* empty css     */import{_ as p}from"./main.js";import{n as m,i as c,p as o,j as i,T as _,o as d}from"./vendor.js";import"./BaseIconSolid.js";import"./index10.js";const l={},u={class:"app-main"};function f(e,j,v,C,B,$){const n=a,s=m("router-view"),t=r;return d(),c("div",{class:_(["app-layout",e.collapsed?"collapsed":""])},[o(n),i("main",u,[o(s)]),o(t)],2)}var V=p(l,[["render",f]]);export{V as default};
-//# sourceMappingURL=docs.js.map

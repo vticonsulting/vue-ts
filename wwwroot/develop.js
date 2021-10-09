@@ -1,2 +1,0 @@
-import{_ as r}from"./Footer.js";import{_ as s}from"./main.js";import{n as a,i as n,p as e,j as c,o as _}from"./vendor.js";import"./index2.js";const m={},i={class:"px-4 py-10 text-gray-700 dark:text-gray-200"},p=c("div",{class:"mx-auto mt-5 text-sm opacity-25"},"[Default Layout]",-1);function d(f,l){const o=a("router-view"),t=r;return _(),n("main",i,[e(o),e(t),p])}var y=s(m,[["render",d]]);export{y as default};
-//# sourceMappingURL=develop.js.map
