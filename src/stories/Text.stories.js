@@ -1,34 +1,30 @@
-import Button from '../components/Button.vue';
+import Text from '../components/Text.vue';
 
 export default {
-  title: 'Button',
-  component: {Button},
+  title: 'Text',
+  component: Text,
   argTypes: {
-    label: 'String',
     backgroundColor: { control: 'color' },
+    onClick: {},
   },
 };
 
 const Template = (args) => ({
   // Components used in your story `template` are defined in the `components` object
-  components: { Button },
+  components: { Text },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Button label="hello" v-bind="args" />',
+  template: '<Text v-bind="args" />',
 });
 
-export const Rounded = Template.bind({});
-Rounded.args = {
-  label: 'Button',
-  rounded: true,
-};
 
 export const Normal = Template.bind({});
 Normal.args = {
-  label: 'Button',
+  label: 'Text',
+  size: 60
 };
 
 
