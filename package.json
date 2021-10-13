@@ -2,11 +2,14 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
     "vue": "^3.2.20"
@@ -21,6 +24,7 @@
     "babel-loader": "^8.2.2",
     "typescript": "^4.4.3",
     "vite": "^2.6.5",
+    "vitepress": "^0.20.0",
     "vue-loader": "^16.8.1",
     "vue-tsc": "^0.3.0",
     "@vue/compiler-sfc": "^3.2.20"
